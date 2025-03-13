@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Untree.co" />
+    <link rel="shortcut icon" href="favicon.png" />
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="bootstrap, bootstrap5" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css" />
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+
+    <link rel="stylesheet" href="css/tiny-slider.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Pavitram &mdash; A IN ONE</title>
+  </head>
+  <body>
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close">
+          <span class="icofont-close js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <nav class="site-nav">
+      <div class="container">
+        <div class="menu-bg-wrap">
+          <div class="site-navigation">
+            <a href="index.html" class="logo m-0 float-start">
+              <img
+                src="images/logo.png"
+                style="height: 80px"
+                alt="Image"
+                class="img-fluid"
+            /></a>
+
+            <ul
+              class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end"
+            >
+              <li><a href="index.html">Home</a></li>
+              <li class="has-children">
+                <a href="properties.html">Properties</a>
+                <ul class="dropdown">
+                  <li><a href="#">Buy Property</a></li>
+                  <li><a href="#">Sell Property</a></li>
+                  <li class="has-children">
+                    <a href="#">Dropdown</a>
+                    <ul class="dropdown">
+                      <li><a href="#">Sub Menu One</a></li>
+                      <li><a href="#">Sub Menu Two</a></li>
+                      <li><a href="#">Sub Menu Three</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="about.html">About</a></li>
+              <li class="active"><a href="contact.html">Contact Us</a></li>
+            </ul>
+
+            <a
+              href="#"
+              class="burger light me-auto float-end mt-1 site-menu-toggle js-menu-toggle d-inline-block d-lg-none"
+              data-toggle="collapse"
+              data-target="#main-navbar"
+            >
+              <span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div
+      class="hero page-inner overlay"
+      style="background-image: url('images/hero_bg_3.jpg')"
+    >
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-lg-9 text-center mt-5">
+            <h1 class="heading" data-aos="fade-up">property</h1>
+
+            <nav
+              aria-label="breadcrumb"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <ol class="breadcrumb text-center justify-content-center">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item">
+                  <a href="properties.html"> All Properties</a>
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row mb-5 align-items-center">
+        <div class="col-lg-6">
+          <h2 class="font-weight-bold text-primary heading">All Properties</h2>
+        </div>
+        <div class="col-lg-6 text-lg-end">
+          <!-- <p>
+            <a
+              href="all_Property.html"
+              target="_blank"
+              class="btn btn-primary text-white py-3 px-4"
+              >View all properties</a
+            >
+          </p> -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="property-slider-wrap">
+            <div class="property-slider">
+              <div class="property-item">
+                <a href="property-single.html" class="img">
+                  <img
+                    src="images/silico_img1.png"
+                    alt="Image"
+                    class="img-fluid"
+                  />
+                </a>
+
+                <div class="property-content">
+                  <div class="price mb-2"><span>₹3,261/sqft</span></div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50"
+                      >Silicon City, Indore</span
+                    >
+                    <span class="city d-block mb-3"
+                      >Rau Road, Bijalpur, Rajendra Nagar Colony, Scheme No
+                      -103, 100 F.T.Road</span
+                    >
+
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption">5 beds</span>
+                      </span>
+                      <span class="d-block d-flex align-items-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption">6 baths</span>
+                      </span>
+                    </div>
+
+                    <a
+                      href="property-single.html"
+                      class="btn btn-primary py-2 px-3"
+                      >See details</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- .item -->
+
+              <div class="property-item">
+                <a href="property-single.html" class="img">
+                  <img
+                    src="images/arihant_img1.png"
+                    alt="Image"
+                    class="img-fluid"
+                  />
+                </a>
+
+                <div class="property-content">
+                  <div class="price mb-2">
+                    <span>1200 Sq.ft. </span>
+                  </div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50"
+                      >Arihant Nagar</span
+                    >
+                    <span class="city d-block mb-3">Nainod, Indore</span>
+
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption">2 beds</span>
+                      </span>
+                      <span class="d-block d-flex align-items-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption">2 baths</span>
+                      </span>
+                    </div>
+
+                    <a
+                      href="property-single.html"
+                      class="btn btn-primary py-2 px-3"
+                      >See details</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- .item -->
+
+              <div class="property-item">
+                <a href="property-single.html" class="img">
+                  <img src="images/img_3.jpg" alt="Image" class="img-fluid" />
+                </a>
+
+                <div class="property-content">
+                  <div class="price mb-2"><span>$1,291,000</span></div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50"
+                      >5232 California Fake, Ave. 21BC</span
+                    >
+                    <span class="city d-block mb-3">California, USA</span>
+
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption">2 beds</span>
+                      </span>
+                      <span class="d-block d-flex align-items-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption">2 baths</span>
+                      </span>
+                    </div>
+
+                    <a
+                      href="property-single.html"
+                      class="btn btn-primary py-2 px-3"
+                      >See details</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- .item -->
+
+              <div class="property-item">
+                <a href="property-single.html" class="img">
+                  <img src="images/img_4.jpg" alt="Image" class="img-fluid" />
+                </a>
+
+                <div class="property-content">
+                  <div class="price mb-2"><span>$1,291,000</span></div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50"
+                      >5232 California Fake, Ave. 21BC</span
+                    >
+                    <span class="city d-block mb-3">California, USA</span>
+
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption">2 beds</span>
+                      </span>
+                      <span class="d-block d-flex align-items-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption">2 baths</span>
+                      </span>
+                    </div>
+
+                    <a
+                      href="property-single.html"
+                      class="btn btn-primary py-2 px-3"
+                      >See details</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- .item -->
+
+              <div class="property-item">
+                <a href="property-single.html" class="img">
+                  <img src="images/img_5.jpg" alt="Image" class="img-fluid" />
+                </a>
+
+                <div class="property-content">
+                  <div class="price mb-2"><span>$1,291,000</span></div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50"
+                      >5232 California Fake, Ave. 21BC</span
+                    >
+                    <span class="city d-block mb-3">California, USA</span>
+
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption">2 beds</span>
+                      </span>
+                      <span class="d-block d-flex align-items-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption">2 baths</span>
+                      </span>
+                    </div>
+
+                    <a
+                      href="property-single.html"
+                      class="btn btn-primary py-2 px-3"
+                      >See details</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- .item -->
+
+              <div class="property-item">
+                <a href="property-single.html" class="img">
+                  <img src="images/img_6.jpg" alt="Image" class="img-fluid" />
+                </a>
+
+                <div class="property-content">
+                  <div class="price mb-2"><span>$1,291,000</span></div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50"
+                      >5232 California Fake, Ave. 21BC</span
+                    >
+                    <span class="city d-block mb-3">California, USA</span>
+
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption">2 beds</span>
+                      </span>
+                      <span class="d-block d-flex align-items-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption">2 baths</span>
+                      </span>
+                    </div>
+
+                    <a
+                      href="property-single.html"
+                      class="btn btn-primary py-2 px-3"
+                      >See details</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- .item -->
+
+              <div class="property-item">
+                <a href="property-single.html" class="img">
+                  <img src="images/img_7.jpg" alt="Image" class="img-fluid" />
+                </a>
+
+                <div class="property-content">
+                  <div class="price mb-2"><span>$1,291,000</span></div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50"
+                      >5232 California Fake, Ave. 21BC</span
+                    >
+                    <span class="city d-block mb-3">California, USA</span>
+
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption">2 beds</span>
+                      </span>
+                      <span class="d-block d-flex align-items-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption">2 baths</span>
+                      </span>
+                    </div>
+
+                    <a
+                      href="property-single.html"
+                      class="btn btn-primary py-2 px-3"
+                      >See details</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- .item -->
+
+              <div class="property-item">
+                <a href="property-single.html" class="img">
+                  <img src="images/img_8.jpg" alt="Image" class="img-fluid" />
+                </a>
+
+                <div class="property-content">
+                  <div class="price mb-2"><span>$1,291,000</span></div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50"
+                      >5232 California Fake, Ave. 21BC</span
+                    >
+                    <span class="city d-block mb-3">California, USA</span>
+
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption">2 beds</span>
+                      </span>
+                      <span class="d-block d-flex align-items-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption">2 baths</span>
+                      </span>
+                    </div>
+
+                    <a
+                      href="property-single.html"
+                      class="btn btn-primary py-2 px-3"
+                      >See details</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- .item -->
+
+              <div class="property-item">
+                <a href="property-single.html" class="img">
+                  <img src="images/img_1.jpg" alt="Image" class="img-fluid" />
+                </a>
+
+                <div class="property-content">
+                  <div class="price mb-2"><span>$1,291,000</span></div>
+                  <div>
+                    <span class="d-block mb-2 text-black-50"
+                      >5232 California Fake, Ave. 21BC</span
+                    >
+                    <span class="city d-block mb-3">California, USA</span>
+
+                    <div class="specs d-flex mb-4">
+                      <span class="d-block d-flex align-items-center me-3">
+                        <span class="icon-bed me-2"></span>
+                        <span class="caption">2 beds</span>
+                      </span>
+                      <span class="d-block d-flex align-items-center">
+                        <span class="icon-bath me-2"></span>
+                        <span class="caption">2 baths</span>
+                      </span>
+                    </div>
+
+                    <a
+                      href="property-single.html"
+                      class="btn btn-primary py-2 px-3"
+                      >See details</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- .item -->
+            </div>
+
+            <div
+              id="property-nav"
+              class="controls"
+              tabindex="0"
+              aria-label="Carousel Navigation"
+            >
+              <span
+                class="prev"
+                data-controls="prev"
+                aria-controls="property"
+                tabindex="-1"
+                >Prev</span
+              >
+              <span
+                class="next"
+                data-controls="next"
+                aria-controls="property"
+                tabindex="-1"
+                >Next</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="features-1">
+      <div class="container">
+        <div class="row">
+          <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="box-feature">
+              <span class="flaticon-house"></span>
+              <h3 class="mb-3">Properties for sell</h3>
+              <p>
+                Discover the easiest way to find your dream home with our
+                exclusive property listings.Explore prime properties for sale
+                and make your dream home a reality. Find the perfect home
+                effortlessly with our curated selection of real estate options.
+              </p>
+              <p>
+                <a href="all_property.html" class="learn-more"
+                  >Explore prime properties</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="500">
+            <div class="box-feature">
+              <span class="flaticon-building"></span>
+              <h3 class="mb-3">Properties for Rent</h3>
+              <p>
+                Find the perfect rental home with ease – comfortable,
+                affordable, and ready for you. Your dream rental is just a click
+                away – explore our listings ! From cozy apartments to spacious
+                homes, find the perfect place to rent. Looking for a home to
+                rent?
+              </p>
+              <p>
+                <a href="all_property.html" class="learn-more"
+                  >Browse our exclusive rental properties</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+            <div class="box-feature">
+              <span class="flaticon-house-3"></span>
+              <h3 class="mb-3">Properties for Exchange</h3>
+              <p>
+                Swap your property effortlessly – find the perfect exchange deal
+                !Upgrade or relocate with ease.Trade your property for a better
+                fit – seamless and secure exchanges await! Smart property swaps
+                made easy – find the best exchange deals!
+              </p>
+              <p>
+                <a href="all_property.html" class="learn-more">
+                  explore property exchange opportunities</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="600">
+            <div class="box-feature">
+              <span class="flaticon-house-1"></span>
+              <h3 class="mb-3">Services</h3>
+              <p>
+                Comprehensive real estate solutions – Buy, Sell, Rent, and
+                Exchange with ease.Seamless real estate transactions with
+                professional support at every step. Your trusted partner for
+                property deals – secure, reliable, and efficient services.
+              </p>
+              <p>
+                <a href="#" class="learn-more"
+                  >From finding your dream home to hassle</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="widget">
+              <h3>Contact</h3>
+              <address>Indore,M.P.</address>
+              <ul class="list-unstyled links">
+                <li><a href="tel://11234567890">+91 9165166000</a></li>
+                <li>
+                  <a href="mailto:info@mydomain.com">info@pavitram.in</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="widget">
+              <h3>Links</h3>
+              <ul class="list-unstyled links">
+                <li><a href="#">Our Vision</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+              </ul>
+
+              <ul class="list-unstyled social">
+                <li>
+                  <a href="#"><span class="icon-instagram"></span></a>
+                </li>
+                <li>
+                  <a href="#"><span class="icon-twitter"></span></a>
+                </li>
+                <li>
+                  <a href="#"><span class="icon-facebook"></span></a>
+                </li>
+                <li>
+                  <a href="#"><span class="icon-linkedin"></span></a>
+                </li>
+                <li>
+                  <a href="#"><span class="icon-pinterest"></span></a>
+                </li>
+                <li>
+                  <a href="#"><span class="icon-dribbble"></span></a>
+                </li>
+              </ul>
+            </div>
+            <!-- /.widget -->
+          </div>
+          <!-- /.col-lg-4 -->
+        </div>
+        <!-- /.row -->
+
+        <!-- <div class="row mt-5">
+          <div class="col-12 text-center">
+            <!-- 
+              **==========
+              NOTE: 
+              Please don't remove this copyright link unless you buy the license here https://untree.co/license/  
+              **==========
+            -->
+      </div>
+      <!-- /.container -->
+    </div>
+    <!-- /.site-footer -->
+
+    <!-- Preloader -->
+    <div id="overlayer"></div>
+    <div class="loader">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/tiny-slider.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/counter.js"></script>
+    <script src="js/custom.js"></script>
+  </body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+    <title>Pavitram-ALL IN ONE</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="icon" href="/images/logo.png" type="image/png" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/colors.css" />
+    <link rel="stylesheet" href="css/bootstrap-select.css" />
+    <link rel="stylesheet" href="css/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="/css/colors.css">
+  </head>
+  <body class="dashboard dashboard_1">
+    <div class="full_container">
+      <div class="inner_container">
+        <nav id="sidebar">
+          <div class="sidebar_blog_1">
+            <div class="sidebar-header">
+              <div class="logo_section">
+              </div>
+            </div>
+            <div class="sidebar_user_info">
+              <div class="icon_setting"></div>
+              <div class="user_profle_side">
+                <div class="user_img">
+                  <img class="img-responsive" src="images/logo.png" alt="#" />
+                </div>
+                <div class="user_info">
+                </span><%= fullName %></p>
+                  <p><span class="online_animation"></span> Online</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar_blog_2">
+            <h4>General</h4>
+            <ul class="list-unstyled components">
+              <li class="active">
+                <a
+                  href="#dashboard"
+                  data-toggle="collapse"
+                  aria-expanded="false"
+                  class="dropdown-toggle"
+                  ><i class="fa fa-dashboard yellow_color"></i>
+                  <span>Dashboard</span></a
+                >
+                <ul class="collapse list-unstyled" id="dashboard">
+                  <li>
+                    <a href="dashboard.html">> <span>Agent Data</span></a>
+                  </li>
+                  <li>
+                    <a href="dashboard_2.html">> <span>Agency Data</span></a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="#element"
+                  data-toggle="collapse"
+                  aria-expanded="false"
+                  class="dropdown-toggle"
+                  ><i class="fa fa-diamond purple_color"></i>
+                  <span>Modules</span></a
+                >
+                <ul class="collapse list-unstyled" id="element">
+                  <li>
+                    <a href="general_elements.html">> <span>Hiring</span></a>
+                  </li>
+                  <li>
+                    <a href="media_gallery.html"
+                      >> <span>Online Meeting</span></a
+                    >
+                  </li>
+                  <li>
+                    <a href="icons.html">> <span>Online Booking</span></a>
+                  </li>
+                  <li>
+                    <a href="/adminpostproper">> <span>Post Activity</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <a
+                  href="#apps"
+                  data-toggle="collapse"
+                  aria-expanded="false"
+                  class="dropdown-toggle"
+                  ><i class="fa fa-object-group blue2_color"></i>
+                  <span>Setting</span></a
+                >
+                <ul class="collapse list-unstyled" id="apps">
+                  <li>
+                    <a href="email.html">> <span>Update Profile</span></a>
+                  </li>
+                  <li>
+                    <a href="calendar.html">> <span>Need to Approve</span></a>
+                  </li>
+                  <li>
+                    <a href="media_gallery.html">> <span>Logout</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div id="content">
+          <div class="topbar">
+            <nav class="navbar navbar-expand-lg navbar-light">
+              <div class="full">
+                <div class="logo_section">
+                  <a href="index.html" class="logo m-0 float-start">
+                    <img
+                      src="images/logo.png"
+                      style="height: 40px"
+                      alt="Image"
+                      class="img-fluid"
+                  /></a>
+                </div>
+                <div class="right_topbar">
+                  <div class="icon_info">
+                    <ul>
+                    </ul>
+                    <ul class="user_profile_dd">
+                      <li>
+                        <a class="dropdown-toggle" data-toggle="dropdown"
+                          ><img
+                            class="img-responsive rounded-circle"
+                            src="images/logo.png"
+                            alt="#"
+                          /></span><%= fullName %></p></a
+                        >
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="profile.html"
+                            >My Profile</a
+                          >
+                          <a class="dropdown-item" href="#"
+                            ><span>Log Out</span> <i class="fa fa-sign-out"></i
+                          ></a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+          <div class="midde_cont">
+            <div class="container-fluid">
+              <div class="row column_title">
+                <div class="col-md-12">
+                  <div class="page_title">
+                    <h2>Dashboard</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="row column1">
+                <div class="col-md-6 col-lg-3">
+                  <div class="full counter_section margin_bottom_30">
+                    <div class="couter_icon">
+                      <div>
+                        <i class="fa fa-user yellow_color"></i>
+                      </div>
+                    </div>
+                    <div class="counter_no">
+                      <div>
+                        <p class="total_no"><%= agentCount %></p>
+                        <p class="head_couter">Total Property for</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                  <div class="full counter_section margin_bottom_30">
+                    <div class="couter_icon">
+                      <div>
+                        <i class="fa fa-clock-o blue1_color"></i>
+                      </div>
+                    </div>
+                    <div class="counter_no">
+                      <div>
+                        <p class="total_no"><%= notVerifiedCount %></p>
+                        <p class="head_couter">Need for approval</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                  <div class="full counter_section margin_bottom_30">
+                    <div class="couter_icon">
+                      <div>
+                        <i class="fa fa-cloud-download green_color"></i>
+                      </div>
+                    </div>
+                    <div class="counter_no">
+                      <div>
+                        <p class="total_no"><%= agentCount %></p>
+                        <p class="head_couter">Total Agent</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                  <div class="full counter_section margin_bottom_30">
+                    <div class="couter_icon">
+                      <div>
+                        <i class="fa fa-comments-o red_color"></i>
+                      </div>
+                    </div>
+                    <div class="counter_no">
+                      <div>
+                        <p class="total_no"><%= agencyCount %></p>
+                        <p class="head_couter">Total Agency</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row column1">
+                <div class="col-md-6 col-lg-3">
+                  <div class="full counter_section margin_bottom_30">
+                    <div class="couter_icon">
+                      <div>
+                        <i class="fa fa-user yellow_color"></i>
+                      </div>
+                    </div>
+                    <div class="counter_no">
+                      <div>
+                        <p class="total_no">3500</p>
+                        <p class="head_couter">Property for Sell</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                  <div class="full counter_section margin_bottom_30">
+                    <div class="couter_icon">
+                      <div>
+                        <i class="fa fa-clock-o blue1_color"></i>
+                      </div>
+                    </div>
+                    <div class="counter_no">
+                      <div>
+                        <p class="total_no">223</p>
+                        <p class="head_couter">Property for Rent</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                  <div class="full counter_section margin_bottom_30">
+                    <div class="couter_icon">
+                      <div>
+                        <i class="fa fa-cloud-download green_color"></i>
+                      </div>
+                    </div>
+                    <div class="counter_no">
+                      <div>
+                        <p class="total_no">2,805</p>
+                        <p class="head_couter">Propeety for Exchange</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                  <div class="full counter_section margin_bottom_30">
+                    <div class="couter_icon">
+                      <div>
+                        <i class="fa fa-comments-o red_color"></i>
+                      </div>
+                    </div>
+                    <div class="counter_no">
+                      <div>
+                        <p class="total_no"><%= adminCount %></p>
+                        <p class="head_couter">Total admin</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row column2 graph margin_bottom_30">
+                <div class="col-md-l2 col-lg-12">
+                  <div class="white_shd full">
+                    <div class="full graph_head">
+                      <div class="heading1 margin_0">
+                        <h2>Post Activity</h2>
+                      </div>
+                    </div>
+                    <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+                      <form action="/postactivity" method="POST" enctype="multipart/form-data">
+                        <input type="text" id="organizerName" name="organizerName" placeholder="Organizer Name" required />
+                        <input type="text" id="eventName" name="eventName" placeholder="Event Name" required />
+                        <input type="date" id="eventdate" name="eventdate" placeholder="Event Date" required />
+                        <input type="time" id="eventtime" name="eventtime" placeholder="Event Time" required />
+                        <input type="text" id="eventrelatedto" name="eventrelatedto" placeholder="Event Related To" required />
+                        <button type="submit" onclick="register(event)">Submit</button>
+                      </form>
+                      
+                      
+                          
+                      </div>
+            </div>
+            <div class="container-fluid">
+              <div class="footer">
+                <p>
+                  Copyright @ 2025 By pavitram <br /><br />
+                  
+                  <a href="/index.html">ALL IN ONE </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/animate.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/Chart.min.js"></script>
+    <script src="js/Chart.bundle.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/analyser.js"></script>
+    <script src="js/perfect-scrollbar.min.js"></script>
+    <script>
+      var ps = new PerfectScrollbar("#sidebar");
+    </script>
+    <script src="js/custom.js"></script>
+    <script src="js/chart_custom_style1.js"></script>
+  </body>
+</html>
+<script>
+  async function register(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Create a FormData object from the form element
+    const form = document.querySelector("form");
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("/postactivity", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await response.json();
+      if (response.ok) {
+        alert("Event posted successfully!");
+      } else {
+        alert("Error: " + data.message);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Something went wrong.");
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector("form").addEventListener("submit", register);
+  });
+</script>

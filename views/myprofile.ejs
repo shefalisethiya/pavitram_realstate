@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+    <title>Pavitram-ALL IN ONE</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="icon" href="/images/logo.png" type="image/png" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/colors.css" />
+    <link rel="stylesheet" href="css/bootstrap-select.css" />
+    <link rel="stylesheet" href="css/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+  </head>
+  <body class="dashboard dashboard_1">
+    <div class="full_container">
+      <div class="inner_container">
+        <nav id="sidebar">
+          <div class="sidebar_blog_1">
+            <div class="sidebar-header">
+              <div class="logo_section">
+              </div>
+            </div>
+            <div class="sidebar_user_info">
+              <div class="icon_setting"></div>
+              <div class="user_profle_side">
+                <div class="user_img">
+                  <img class="img-responsive" src="images/logo.png" alt="#" />
+                </div>
+                <div class="user_info">
+                    <h6 id="userFullName">Admin</h6>
+                    <p><span class="online_animation"></span> Online</p>
+                  </div>
+                  <p><%= user.fullName %></p>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar_blog_2">
+            <h4>General</h4>
+            <ul class="list-unstyled components">
+              <li class="active">
+                <a
+                  href="#dashboard"
+                  data-toggle="collapse"
+                  aria-expanded="false"
+                  class="dropdown-toggle"
+                  ><i class="fa fa-dashboard yellow_color"></i>
+                  <span>Dashboard</span></a
+                >
+                <ul class="collapse list-unstyled" id="dashboard">
+                  <li>
+                    <a href="/agentdata">> <span>Agent Data</span></a>
+                  </li>
+                  <li>
+                    <a href="/agencydata">> <span>Agency Data</span></a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="#element"
+                  data-toggle="collapse"
+                  aria-expanded="false"
+                  class="dropdown-toggle"
+                  ><i class="fa fa-diamond purple_color"></i>
+                  <span>Modules</span></a
+                >
+                <ul class="collapse list-unstyled" id="element">
+                  <li>
+                    <a href="general_elements.html">> <span>Hiring</span></a>
+                  </li>
+                  <li>
+                    <a href="media_gallery.html"
+                      >> <span>Online Meeting</span></a
+                    >
+                  </li>
+                  <li>
+                    <a href="icons.html">> <span>Online Booking</span></a>
+                  </li>
+                  <li>
+                    <a href="/adminpostproper">> <span>Post Own Property</span></a>
+                  </li>
+                  <li>
+                    <a href="/adminpostproper">> <span>Post Activity</span></a>
+                  </li>
+                  <li>
+                    <a href="/agetAllPostedProperty"> <span>update_property_current_status</span></a>
+                  </li>
+                  <li>
+                    <a href="/adminsignup">> <span>create other admin</span></a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="#apps"
+                  data-toggle="collapse"
+                  aria-expanded="false"
+                  class="dropdown-toggle"
+                  ><i class="fa fa-object-group blue2_color"></i>
+                  <span>Setting</span></a
+                >
+                <ul class="collapse list-unstyled" id="apps">
+                  <li>
+                    <a href="email.html">> <span>Update Profile</span></a>
+                  </li>
+                  <li>
+                    <a href="calendar.html">> <span>Need to Approve</span></a>
+                  </li>
+                  <li>
+                    <a href="media_gallery.html">> <span>Logout</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div id="content">
+          <div class="topbar">
+            <nav class="navbar navbar-expand-lg navbar-light">
+              <div class="full">
+                <div class="logo_section">
+                  <a href="index.html" class="logo m-0 float-start">
+                    <img
+                      src="images/logo.png"
+                      style="height: 40px"
+                      alt="Image"
+                      class="img-fluid"
+                  /></a>
+                </div>
+                <div class="right_topbar">
+                  <div class="icon_info">
+                    <ul>
+                    </ul>
+                    <ul class="user_profile_dd">
+                      <li>
+                        <a class="dropdown-toggle" data-toggle="dropdown"
+                          ><img
+                            class="img-responsive rounded-circle"
+                            src="images/logo.png"
+                            alt="#"
+                          />
+                            <span class="name_user">
+                              </span><%= user.fullName %></p>
+                            </span>
+                
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="profile.html"
+                            >My Profile</a
+                          >
+                          <a class="dropdown-item" href="/logout"
+                            ><span>Log Out</span> <i class="fa fa-sign-out"></i
+                          ></a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+              <div class="row column2 graph margin_bottom_30">
+                <div class="col-md-l2 col-lg-12">
+                  <div class="white_shd full">
+                    <div class="full graph_head">
+                      <div class="heading1 margin_0">
+                        <h2 style="color: #002147;">update Profile</h2><br>
+                      </div>
+                    </div>
+                    <div >
+                       <% if (Array.isArray(allData)) { %>
+                                  <% allData.forEach(user => { %>
+                                    
+                                  <% }) %>
+                                <% } else { %>
+                                  <tr><td colspan="5">No data available</td></tr>
+                                <% } %>
+                                <form id="registerForm">
+                                    <div class="row">
+                                      <div class="col-6 mb-3">
+                                        <label>full Name</label><input type="text" class="form-control" placeholder="Full Name"value="<%= user.fullName %>" id="fullname" required />
+                                      </div>
+                                      <div class="col-6 mb-3">
+                                        <label>Email</label>    <input type="email" class="form-control" placeholder="Your Email" value="<%= user.email %>" id="email" required />
+                                      </div>
+                                      <div class="col-6 mb-3">
+                                        <label>Mobile No</label> <input type="text" class="form-control" placeholder="Mobile No" value="<%= user.mobileNo %>"id="mobileNo" required />
+                                      </div>
+                                      <div class="col-6 mb-3">
+                                        <label>WhatsApp No</label>  <input type="text" class="form-control" placeholder="WhatsApp No."value="<%= user.whattsappNo %>" id="whatsappNo" required />
+                                      </div>
+                                      <div class="col-6 mb-3">
+                                        
+                                        <label>Password</label>     <input type="password" class="form-control" placeholder="Password" value="<%= user.password %>"id="password" required />
+                                      </div>
+                                      <div class="col-6 mb-3">
+                                        <label>confirm Password</label>   <input type="password" class="form-control" placeholder="Confirm Password" id="confirmPassword" required />
+                                      </div>
+                                      
+                                      <div class="col-12">
+                                        <input type="submit" value="update" class="btn btn-primary" onclick="register(event)" />
+                                      </div>
+                                    </div>
+                                  </form>
+                    </div>  
+            </div>
+            <div class="container-fluid">
+              <div class="footer">
+                <p>
+                  Copyright @ 2000 By pavitram <br /><br />
+                  
+                  <a href="https://themewagon.com/">ALL IN ONE </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/animate.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/Chart.min.js"></script>
+    <script src="js/Chart.bundle.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/analyser.js"></script>
+    <script src="js/perfect-scrollbar.min.js"></script>
+    <script>
+      var ps = new PerfectScrollbar("#sidebar");
+    </script>
+    <script src="js/custom.js"></script>
+    <script src="js/chart_custom_style1.js"></script>
+  </body>
+</html>
+<script>
+    async function register(event) {
+document.getElementById("registerForm").addEventListener("submit", async function (event) {
+
+    const fullName = document.getElementById("fullname").value;
+    const email = document.getElementById("email").value;
+    const mobileNo = document.getElementById("mobileNo").value;
+    const whatsappNo = document.getElementById("whatsappNo").value;
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+    if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        return;
+    }
+    const updateData = {
+        fullName,
+        email,
+        mobileNo,
+        whatsappNo,
+        password
+    };
+    try {
+        const response = await fetch("/updateUser", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(updateData)
+        });
+        const result = await response.json();
+        if (response.ok) {
+            alert("User updated successfully!");
+            location.reload();
+        } else {
+            alert("Error: " + result.message);
+        }
+    } catch (error) {
+        console.error("Update failed:", error);
+        alert("An error occurred. Please try again.");
+    }
+});
+    }
+</script>

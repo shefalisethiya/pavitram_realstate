@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Register Material</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      form {
+        max-width: 500px;
+        margin: auto;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 id="formTitle">Register Material</h2>
+    <form
+      action="/submitMaterial"
+      method="POST"
+      enctype="multipart/form-data"
+      style="
+        max-width: 600px;
+        margin: 0 auto;
+        border: 1px solid #ccc;
+        padding: 20px;
+        box-sizing: border-box;
+      "
+    >
+      <!-- 1. Material Name/Brand -->
+      <label
+        for="materialName"
+        style="display: block; margin-bottom: 5px; font-weight: bold"
+      >
+        Material Name/Brand:
+      </label>
+      <input
+        type="text"
+        id="materialName"
+        name="materialName"
+        placeholder="e.g. XYZ Cement, Apex Paint"
+        required
+        style="
+          width: 100%;
+          padding: 8px;
+          margin-bottom: 15px;
+          box-sizing: border-box;
+        "
+      />
+
+      <!-- 2. Category/Type -->
+      <label
+        for="category"
+        style="display: block; margin-bottom: 5px; font-weight: bold"
+      >
+        Category/Type:
+      </label>
+      <select
+        id="category"
+        name="category"
+        required
+        style="
+          width: 100%;
+          padding: 8px;
+          margin-bottom: 15px;
+          box-sizing: border-box;
+        "
+      >
+        <option value="">-- Select Category --</option>
+        <option value="cement">Cement</option>
+        <option value="concrete">Concrete</option>
+        <option value="bricks">Bricks</option>
+        <option value="steel">Steel</option>
+        <option value="plaster">Plaster</option>
+        <option value="flooring">Flooring</option>
+        <option value="pipes">Pipes</option>
+        <option value="paints">Paints</option>
+      </select>
+
+      <!-- 3. Price -->
+      <label
+        for="price"
+        style="display: block; margin-bottom: 5px; font-weight: bold"
+      >
+        Price:
+      </label>
+      <input
+        type="number"
+        step="0.01"
+        id="price"
+        name="price"
+        placeholder="e.g. 300 (per bag), 5000 (per ton)"
+        required
+        style="
+          width: 100%;
+          padding: 8px;
+          margin-bottom: 15px;
+          box-sizing: border-box;
+        "
+      />
+
+      <!-- 4. Unit/Packaging -->
+      <label
+        for="unit"
+        style="display: block; margin-bottom: 5px; font-weight: bold"
+      >
+        Unit/Packaging (e.g. bag, liter, piece):
+      </label>
+      <input
+        type="text"
+        id="unit"
+        name="unit"
+        placeholder="e.g. bag, L, kg"
+        style="
+          width: 100%;
+          padding: 8px;
+          margin-bottom: 15px;
+          box-sizing: border-box;
+        "
+      />
+
+      <!-- 5. Quantity/Stock -->
+      <label
+        for="quantity"
+        style="display: block; margin-bottom: 5px; font-weight: bold"
+      >
+        Quantity in Stock:
+      </label>
+      <input
+        type="number"
+        id="quantity"
+        name="quantity"
+        placeholder="e.g. 100"
+        required
+        style="
+          width: 100%;
+          padding: 8px;
+          margin-bottom: 15px;
+          box-sizing: border-box;
+        "
+      />
+
+      <!-- 6. Description/Additional Info -->
+      <label
+        for="description"
+        style="display: block; margin-bottom: 5px; font-weight: bold"
+      >
+        Description (Additional Info):
+      </label>
+      <textarea
+        id="description"
+        name="description"
+        rows="4"
+        placeholder="Any special details, usage instructions, or specifications..."
+        style="
+          width: 100%;
+          padding: 8px;
+          margin-bottom: 15px;
+          box-sizing: border-box;
+        "
+      ></textarea>
+
+      <!-- 7. Supplier/Contact Info -->
+      <label
+        for="supplier"
+        style="display: block; margin-bottom: 5px; font-weight: bold"
+      >
+        Supplier/Contact:
+      </label>
+      <input
+        type="text"
+        id="supplier"
+        name="supplier"
+        placeholder="e.g. Supplier name, phone, email"
+        style="
+          width: 100%;
+          padding: 8px;
+          margin-bottom: 15px;
+          box-sizing: border-box;
+        "
+      />
+
+      <!-- 8. Location -->
+      <label
+        for="location"
+        style="display: block; margin-bottom: 5px; font-weight: bold"
+      >
+        Location (Warehouse/Store):
+      </label>
+      <input
+        type="text"
+        id="location"
+        name="location"
+        placeholder="e.g. Indore, Mumbai, etc."
+        style="
+          width: 100%;
+          padding: 8px;
+          margin-bottom: 15px;
+          box-sizing: border-box;
+        "
+      />
+
+      <!-- 9. Image Upload (Optional) -->
+      <label
+        for="uploadImage"
+        style="display: block; margin-bottom: 5px; font-weight: bold"
+      >
+        Upload Image:
+      </label>
+      <input
+        type="file"
+        id="uploadImage"
+        name="uploadImage"
+        style="margin-bottom: 15px"
+      />
+
+      <button
+        type="submit"
+        style="
+          background-color: #4caf50;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          cursor: pointer;
+        "
+      >
+        Submit
+      </button>
+    </form>
+
+    <script>
+      // Helper function to get a query parameter by name
+      function getQueryParam(param) {
+        const params = new URLSearchParams(window.location.search);
+        return params.get(param);
+      }
+
+      // Helper function to create a form field
+      function createField(labelText, name, type = "text", required = true) {
+        const div = document.createElement("div");
+        const label = document.createElement("label");
+        label.innerText = labelText;
+        label.setAttribute("for", name);
+        let input;
+        // Use textarea for longer text if needed
+        if (type === "textarea") {
+          input = document.createElement("textarea");
+        } else {
+          input = document.createElement("input");
+          input.type = type;
+        }
+        input.name = name;
+        input.id = name;
+        if (required) input.required = true;
+        div.appendChild(label);
+        div.appendChild(input);
+        return div;
+      }
+
+      // Get the material type from the query parameter
+      const material = getQueryParam("material") || "material";
+      document.getElementById("material").value = material;
+      document.getElementById("formTitle").innerText =
+        "Register " + material.charAt(0).toUpperCase() + material.slice(1);
+
+      const dynamicFields = document.getElementById("dynamicFields");
+
+      // Common fields for all materials
+      dynamicFields.appendChild(
+        createField("Name/Brand/Grade", "quantity", "number")
+      );
+      dynamicFields.appendChild(
+        createField("Pricing(Price per Bag, Bag Size)")
+      );
+      dynamicFields.appendChild(createField("Inventory (Quantity)"));
+      dynamicFields.appendChild(
+        createField("Additional Details (Description, Location)")
+      );
+      dynamicFields.appendChild(createField("Contact Information", false));
+
+      // Additional fields based on the material type
+      switch (material.toLowerCase()) {
+        case "cement":
+          dynamicFields.appendChild(
+            createField("Bag Size (kg)", "bagSize", "number")
+          );
+          dynamicFields.appendChild(createField("Grade", "grade"));
+          break;
+        case "concrete":
+          dynamicFields.appendChild(createField("Mix Ratio", "mixRatio"));
+          dynamicFields.appendChild(
+            createField("Slump (mm)", "slump", "number")
+          );
+          break;
+        case "bricks":
+          dynamicFields.appendChild(createField("Brick Size", "brickSize"));
+          dynamicFields.appendChild(
+            createField("Quantity per Pallet", "palletQuantity", "number")
+          );
+          break;
+        case "steel":
+          dynamicFields.appendChild(createField("Grade", "steelGrade"));
+          dynamicFields.appendChild(
+            createField("Weight (kg)", "weight", "number")
+          );
+          break;
+        case "plaster":
+          dynamicFields.appendChild(createField("Type", "plasterType"));
+          dynamicFields.appendChild(createField("Mix Ratio", "mixRatio"));
+          break;
+        case "flooring":
+          dynamicFields.appendChild(
+            createField("Material Type", "floorMaterial")
+          );
+          dynamicFields.appendChild(
+            createField("Area (sq ft)", "area", "number")
+          );
+          break;
+        case "pipes":
+          dynamicFields.appendChild(
+            createField("Diameter (inches)", "diameter", "number")
+          );
+          dynamicFields.appendChild(
+            createField("Length (ft)", "length", "number")
+          );
+          break;
+        case "paints":
+          dynamicFields.appendChild(createField("Color", "color"));
+          dynamicFields.appendChild(
+            createField("Volume (L)", "volume", "number")
+          );
+          break;
+        default:
+          // Fallback additional field if material type is unrecognized
+          dynamicFields.appendChild(
+            createField("Additional Info", "additionalInfo", "textarea", false)
+          );
+          break;
+      }
+    </script>
+  </body>
+</html>

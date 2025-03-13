@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Untree.co" />
+    <link rel="shortcut icon" href="/images/logo.png" />
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="bootstrap, bootstrap5" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css" />
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+
+    <link rel="stylesheet" href="css/tiny-slider.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Pavitram &mdash; All In One</title>
+  </head>
+  <body>
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close">
+          <span class="icofont-close js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <nav class="site-nav">
+      <div class="container">
+        <div class="menu-bg-wrap">
+          <div class="site-navigation">
+            <a href="index.html" class="logo m-0 float-start">
+              <img
+                src="images/logo.png"
+                style="height: 50px"
+                alt="Image"
+                class="img-fluid"
+            /></a>
+
+            <ul
+              class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end"
+            >
+              <li class="active"><a href="index.html">Home</a></li>
+              <li class="has-children">
+                <a href="properties.html">Properties</a>
+                <ul class="dropdown">
+                  <li><a href="all_property.html">Buy Property</a></li>
+                  <li><a href="all_property.html">Sell Property</a></li>
+                  <li><a href="all_property.html">Exchange Property</a></li>
+                  <!-- <li class="has-children">
+                    <a href="all_property.html">Exchange</a> -->
+                    <!-- <ul class="dropdown">
+                      <li><a href="#">Sub Menu One</a></li>
+                      <li><a href="#">Sub Menu Two</a></li>
+                      <li><a href="#">Sub Menu Three</a></li>
+                    </ul> -->
+                  </li>
+                </ul>
+              </li>
+              <li class="has-children">
+                <a href="services.html">Services</a>
+                <ul class="dropdown">
+                  <li><a href="all_property.html">Maintance</a></li>
+                  <li><a href="all_property.html">Contractual Obligations and Considerations</a></li>
+                  <li><a href="all_property.html">Financing</a></li>
+                  <li><a href="all_property.html">Metarial</a></li>
+                  <li><a href="all_property.html">Hiring Process</a></li>
+                  <li><a href="all_property.html">online meeting</a></li>
+                  <li><a href="all_property.html">online Booking</a></li>
+                 
+                  </li>
+                  
+                </ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html" >@@Contact Us</a></li>
+              <li><a href="inquiry.html" >inquiry</a></li>
+              <li><a href="Booking Form.html" >online Booking</a></li>
+              <li class="has-children">
+                <a href="properties.html">Login</a>
+                <ul class="dropdown">
+                 
+                  <li><a href="/adminlogin"> <button type="submit" class="btn btn-primary">Login</button></a></li>
+                  <li><a href="register.html">signup</a></li>
+            </ul>
+            
+            <a
+              href="#"
+              class="burger light me-auto float-end mt-1 site-menu-toggle js-menu-toggle d-inline-block d-lg-none"
+              data-toggle="collapse"
+              data-target="#main-navbar"
+            >
+              <span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+    </nav>
+    <div
+      class="hero page-inner overlay"
+      style="background-image: url('images/hero_bg_2.jpg')"
+    >
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-lg-9 text-center mt-5">
+            <h1 class="heading" data-aos="fade-up">
+              Easiest way to find your dream home
+            </h1>
+            <form>
+              <input type="text" id="city" class="form-control px-4" placeholder="Your City. e.g. Indore" />
+              <button type="submit" value="submit" onclick="search()"btn btn-primary">Search</button>
+          </form>
+
+            <nav
+              aria-label="breadcrumb"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <ol class="breadcrumb text-center justify-content-center">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li
+                  class="breadcrumb-item active text-white-50"
+                  aria-current="page"
+                >
+                  home
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="container">
+        <div class="row mb-5 align-items-center">
+          <div class="col-lg-6">
+            <h2 class="font-weight-bold text-primary heading">
+              Popular Properties
+            </h2>
+          </div>
+          <div class="col-lg-6 text-lg-end">
+            <p>
+              <a
+                href="all_Property.html"
+                target="_blank"
+                class="btn btn-primary text-white py-3 px-4"
+                >View all properties</a
+              >
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="property-slider-wrap">
+              <div class="property-slider">
+                <div class="property-item">
+                  <a href="property-single.html" class="img">
+                    <img
+                      src="images/silico_img1.png"
+                      alt="Image"
+                      class="img-fluid"
+                    />
+                  </a>
+
+                  <div class="property-content">
+                    <div class="price mb-2"><span>₹3,261/sqft</span></div>
+                    <div>
+                      <span class="d-block mb-2 text-black-50"
+                        >Silicon City, Indore</span
+                      >
+                      <span class="city d-block mb-3"
+                        >Rau Road, Bijalpur, Rajendra Nagar Colony, Scheme No
+                        -103, 100 F.T.Road</span
+                      >
+
+                      <div class="specs d-flex mb-4">
+                        <span class="d-block d-flex align-items-center me-3">
+                          <span class="icon-bed me-2"></span>
+                          <span class="caption">5 beds</span>
+                        </span>
+                        <span class="d-block d-flex align-items-center">
+                          <span class="icon-bath me-2"></span>
+                          <span class="caption">6 baths</span>
+                        </span>
+                      </div>
+
+                      <a
+                        href="property-single.html"
+                        class="btn btn-primary py-2 px-3"
+                        >See details</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- .item -->
+
+                <div class="property-item">
+                  <a href="property-single.html" class="img">
+                    <img
+                      src="images/arihant_img1.png"
+                      alt="Image"
+                      class="img-fluid"
+                    />
+                  </a>
+
+                  <div class="property-content">
+                    <div class="price mb-2">
+                      <span>1200 Sq.ft. </span>
+                    </div>
+                    <div>
+                      <span class="d-block mb-2 text-black-50"
+                        >Arihant Nagar</span
+                      >
+                      <span class="city d-block mb-3">Nainod, Indore</span>
+
+                      <div class="specs d-flex mb-4">
+                        <span class="d-block d-flex align-items-center me-3">
+                          <span class="icon-bed me-2"></span>
+                          <span class="caption">2 beds</span>
+                        </span>
+                        <span class="d-block d-flex align-items-center">
+                          <span class="icon-bath me-2"></span>
+                          <span class="caption">2 baths</span>
+                        </span>
+                      </div>
+
+                      <a
+                        href="property-single.html"
+                        class="btn btn-primary py-2 px-3"
+                        >See details</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- .item -->
+
+                <div class="property-item">
+                  <a href="property-single.html" class="img">
+                    <img src="images/img_3.jpg" alt="Image" class="img-fluid" />
+                  </a>
+
+                  <div class="property-content">
+                    <div class="price mb-2"><span>$1,291,000</span></div>
+                    <div>
+                      <span class="d-block mb-2 text-black-50"
+                        >5232 California Fake, Ave. 21BC</span
+                      >
+                      <span class="city d-block mb-3">California, USA</span>
+
+                      <div class="specs d-flex mb-4">
+                        <span class="d-block d-flex align-items-center me-3">
+                          <span class="icon-bed me-2"></span>
+                          <span class="caption">2 beds</span>
+                        </span>
+                        <span class="d-block d-flex align-items-center">
+                          <span class="icon-bath me-2"></span>
+                          <span class="caption">2 baths</span>
+                        </span>
+                      </div>
+
+                      <a
+                        href="property-single.html"
+                        class="btn btn-primary py-2 px-3"
+                        >See details</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- .item -->
+
+                <div class="property-item">
+                  <a href="property-single.html" class="img">
+                    <img src="images/img_4.jpg" alt="Image" class="img-fluid" />
+                  </a>
+
+                  <div class="property-content">
+                    <div class="price mb-2"><span>$1,291,000</span></div>
+                    <div>
+                      <span class="d-block mb-2 text-black-50"
+                        >5232 California Fake, Ave. 21BC</span
+                      >
+                      <span class="city d-block mb-3">California, USA</span>
+
+                      <div class="specs d-flex mb-4">
+                        <span class="d-block d-flex align-items-center me-3">
+                          <span class="icon-bed me-2"></span>
+                          <span class="caption">2 beds</span>
+                        </span>
+                        <span class="d-block d-flex align-items-center">
+                          <span class="icon-bath me-2"></span>
+                          <span class="caption">2 baths</span>
+                        </span>
+                      </div>
+
+                      <a
+                        href="property-single.html"
+                        class="btn btn-primary py-2 px-3"
+                        >See details</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- .item -->
+
+                <div class="property-item">
+                  <a href="property-single.html" class="img">
+                    <img src="images/img_5.jpg" alt="Image" class="img-fluid" />
+                  </a>
+
+                  <div class="property-content">
+                    <div class="price mb-2"><span>$1,291,000</span></div>
+                    <div>
+                      <span class="d-block mb-2 text-black-50"
+                        >5232 California Fake, Ave. 21BC</span
+                      >
+                      <span class="city d-block mb-3">California, USA</span>
+
+                      <div class="specs d-flex mb-4">
+                        <span class="d-block d-flex align-items-center me-3">
+                          <span class="icon-bed me-2"></span>
+                          <span class="caption">2 beds</span>
+                        </span>
+                        <span class="d-block d-flex align-items-center">
+                          <span class="icon-bath me-2"></span>
+                          <span class="caption">2 baths</span>
+                        </span>
+                      </div>
+
+                      <a
+                        href="property-single.html"
+                        class="btn btn-primary py-2 px-3"
+                        >See details</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- .item -->
+
+                <div class="property-item">
+                  <a href="property-single.html" class="img">
+                    <img src="images/img_6.jpg" alt="Image" class="img-fluid" />
+                  </a>
+
+                  <div class="property-content">
+                    <div class="price mb-2"><span>$1,291,000</span></div>
+                    <div>
+                      <span class="d-block mb-2 text-black-50"
+                        >5232 California Fake, Ave. 21BC</span
+                      >
+                      <span class="city d-block mb-3">California, USA</span>
+
+                      <div class="specs d-flex mb-4">
+                        <span class="d-block d-flex align-items-center me-3">
+                          <span class="icon-bed me-2"></span>
+                          <span class="caption">2 beds</span>
+                        </span>
+                        <span class="d-block d-flex align-items-center">
+                          <span class="icon-bath me-2"></span>
+                          <span class="caption">2 baths</span>
+                        </span>
+                      </div>
+
+                      <a
+                        href="property-single.html"
+                        class="btn btn-primary py-2 px-3"
+                        >See details</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- .item -->
+
+                <div class="property-item">
+                  <a href="property-single.html" class="img">
+                    <img src="images/img_7.jpg" alt="Image" class="img-fluid" />
+                  </a>
+
+                  <div class="property-content">
+                    <div class="price mb-2"><span>$1,291,000</span></div>
+                    <div>
+                      <span class="d-block mb-2 text-black-50"
+                        >5232 California Fake, Ave. 21BC</span
+                      >
+                      <span class="city d-block mb-3">California, USA</span>
+
+                      <div class="specs d-flex mb-4">
+                        <span class="d-block d-flex align-items-center me-3">
+                          <span class="icon-bed me-2"></span>
+                          <span class="caption">2 beds</span>
+                        </span>
+                        <span class="d-block d-flex align-items-center">
+                          <span class="icon-bath me-2"></span>
+                          <span class="caption">2 baths</span>
+                        </span>
+                      </div>
+
+                      <a
+                        href="property-single.html"
+                        class="btn btn-primary py-2 px-3"
+                        >See details</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- .item -->
+
+                <div class="property-item">
+                  <a href="property-single.html" class="img">
+                    <img src="images/img_8.jpg" alt="Image" class="img-fluid" />
+                  </a>
+
+                  <div class="property-content">
+                    <div class="price mb-2"><span>$1,291,000</span></div>
+                    <div>
+                      <span class="d-block mb-2 text-black-50"
+                        >5232 California Fake, Ave. 21BC</span
+                      >
+                      <span class="city d-block mb-3">California, USA</span>
+
+                      <div class="specs d-flex mb-4">
+                        <span class="d-block d-flex align-items-center me-3">
+                          <span class="icon-bed me-2"></span>
+                          <span class="caption">2 beds</span>
+                        </span>
+                        <span class="d-block d-flex align-items-center">
+                          <span class="icon-bath me-2"></span>
+                          <span class="caption">2 baths</span>
+                        </span>
+                      </div>
+
+                      <a
+                        href="property-single.html"
+                        class="btn btn-primary py-2 px-3"
+                        >See details</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- .item -->
+
+                <div class="property-item">
+                  <a href="property-single.html" class="img">
+                    <img src="images/img_1.jpg" alt="Image" class="img-fluid" />
+                  </a>
+
+                  <div class="property-content">
+                    <div class="price mb-2"><span>$1,291,000</span></div>
+                    <div>
+                      <span class="d-block mb-2 text-black-50"
+                        >5232 California Fake, Ave. 21BC</span
+                      >
+                      <span class="city d-block mb-3">California, USA</span>
+
+                      <div class="specs d-flex mb-4">
+                        <span class="d-block d-flex align-items-center me-3">
+                          <span class="icon-bed me-2"></span>
+                          <span class="caption">2 beds</span>
+                        </span>
+                        <span class="d-block d-flex align-items-center">
+                          <span class="icon-bath me-2"></span>
+                          <span class="caption">2 baths</span>
+                        </span>
+                      </div>
+
+                      <a
+                        href="property-single.html"
+                        class="btn btn-primary py-2 px-3"
+                        >See details</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- .item -->
+              </div>
+
+              <div
+                id="property-nav"
+                class="controls"
+                tabindex="0"
+                aria-label="Carousel Navigation"
+              >
+                <span
+                  class="prev"
+                  data-controls="prev"
+                  aria-controls="property"
+                  tabindex="-1"
+                  >Prev</span
+                >
+                <span
+                  class="next"
+                  data-controls="next"
+                  aria-controls="property"
+                  tabindex="-1"
+                  >Next</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="features-1">
+      <div class="container">
+        <div class="row">
+          <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="box-feature">
+              <span class="flaticon-house"></span>
+              <h3 class="mb-3">Properties for sell</h3>
+              <p>
+                Discover the easiest way to find your dream home with our
+                exclusive property listings.Explore prime properties for sale
+                and make your dream home a reality. Find the perfect home
+                effortlessly with our curated selection of real estate options.
+              </p>
+              <p>
+                <a href="all_property.html" class="learn-more"
+                  >Explore prime properties</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="500">
+            <div class="box-feature">
+              <span class="flaticon-building"></span>
+              <h3 class="mb-3">Properties for Rent</h3>
+              <p>
+                Find the perfect rental home with ease – comfortable,
+                affordable, and ready for you. Your dream rental is just a click
+                away – explore our listings ! From cozy apartments to spacious
+                homes, find the perfect place to rent. Looking for a home to
+                rent?
+              </p>
+              <p>
+                <a href="all_property.html" class="learn-more"
+                  >Browse our exclusive rental properties</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+            <div class="box-feature">
+              <span class="flaticon-house-3"></span>
+              <h3 class="mb-3">Properties for Exchange</h3>
+              <p>
+                Swap your property effortlessly – find the perfect exchange deal
+                !Upgrade or relocate with ease.Trade your property for a better
+                fit – seamless and secure exchanges await! Smart property swaps
+                made easy – find the best exchange deals!
+              </p>
+              <p>
+                <a href="all_property.html" class="learn-more">
+                  explore property exchange opportunities</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="600">
+            <div class="box-feature">
+              <span class="flaticon-house-1"></span>
+              <h3 class="mb-3">Services</h3>
+              <p>
+                Comprehensive real estate solutions – Buy, Sell, Rent, and
+                Exchange with ease.Seamless real estate transactions with
+                professional support at every step. Your trusted partner for
+                property deals – secure, reliable, and efficient services.
+              </p>
+              <p>
+                <a href="#" class="learn-more"
+                  >From finding your dream home to hassle</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section sec-testimonials">
+      <div class="container">
+        <div class="row mb-5 align-items-center">
+          <div class="col-md-6">
+            <h2 class="font-weight-bold heading text-primary mb-4 mb-md-0">
+              Our Services
+            </h2>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <div id="testimonial-nav">
+              <span class="prev" data-controls="prev">Prev</span>
+
+              <span class="next" data-controls="next">Next</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4"></div>
+        </div>
+        <div class="testimonial-slider-wrap">
+          <div class="testimonial-slider">
+            <div class="item">
+              <div class="testimonial">
+                <img
+                  src="images/maintaince.png"
+                  alt="Image"
+                  class="img-fluid rounded-circle w-25 mb-4"
+                />
+                <div class="rate">
+                  <span class="icon-star text-warning"></span>
+                  <span class="icon-star text-warning"></span>
+                  <span class="icon-star text-warning"></span>
+                  <span class="icon-star text-warning"></span>
+                  <span class="icon-star text-warning"></span>
+                </div>
+                <h3 class="h5 text-primary mb-4">Maintance</h3>
+                <blockquote>
+                  <p>
+                    Preventative Maintenance
+                    <ol>
+                      <li>Routine Inspections</li>
+                      <li>Cleaning & Servicing</li>
+                      <li>Landscape Maintenance</li>
+                    </ol>
+                  </p>
+                </blockquote>
+                <p class="text-black-50">By: pavitram platfrom</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="testimonial">
+                <img
+                  src="images/contactual.png"
+                  alt="Image"
+                  class="img-fluid rounded-circle w-25 mb-4"
+                />
+                <div class="rate">
+                  <span class="icon-star text-warning"></span>
+                  <span class="icon-star text-warning"></span>
+                  <span class="icon-star text-warning"></span>
+                  <span class="icon-star text-warning"></span>
+                  <span class="icon-star text-warning"></span>
+                </div>
+                <h3 class="h5 text-primary mb-4">Contractual Obligations and Considerations:</h3>
+                <blockquote>
+                  <p>
+                    Contractual Obligations and Considerations:
+                    <ol>
+                      <li>Clarity</li>
+                      <li>Legal Compliance</li>
+                      <li>Dispute Resolution</li>
+                      <li>Amendments</li>
+                    </ol>
+                  </p>
+                </blockquote>
+                <p class="text-black-50">By: pavitram platfrom</p>
+              </div>
+            </div>
+            
+
+            <div class="item">
+              <div class="testimonial">
+                <img
+                  src="images/financing.png"
+                  alt="Image"
+                  class="img-fluid rounded-circle w-25 mb-4"
+                />
+                <div class="rate">
+                  <span class="icon-star text-warning"></span>
+                  <span class="icon-star text-warning"></span>
+                  <span class="icon-star text-warning"></span>
+                  <span class="icon-star text-warning"></span>
+                  <span class="icon-star text-warning"></span>
+                </div>
+                <h3 class="h5 text-primary mb-4"> Financing</h3>
+                <blockquote>
+                  <p>
+                    Financing
+                    <ol>
+                      <li>Property Insurance</li>
+                      <li>Property Loan</li>
+              
+                    </ol>
+                  </p>
+                </blockquote>
+                <p class="text-black-50">By: pavitram platfrom</p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="testimonial">
+                <img
+                  src="images/material.png"
+                  alt="Image"
+                  class="img-fluid rounded-circle w-25 mb-4"
+                />
+                <div class="rate">
+                  <span class="icon-star text-warning"></span>
+                  <span class="icon-star text-warning"></span>
+                  <span class="icon-star text-warning"></span>
+                  <span class="icon-star text-warning"></span>
+                  <span class="icon-star text-warning"></span>
+                </div>
+                <h3 class="h5 text-primary mb-4">Metarial</h3>
+                <blockquote>
+                  <p>
+                    Metarial
+                    <ol>
+                      <li> Building Materials</li>
+                      <li>Roofing Materials</li>
+                      <li>Flooring Materials</li>
+                      <li>Insulation Materials</li>
+                      <li>Exterior Materials</li>
+                      <li>Finishing Materials</li>
+                      <li>Sustainable and Green Materials</li>
+                      <li>Plumbing and Electrical Materials</li>
+                      <li>Sustainable Construction Materials</li>
+                    </ol>
+                  </p>
+                </blockquote>
+                <p class="text-black-50">By: pavitram platfrom</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section section-4 bg-light">
+      <div class="container">
+        <div class="row justify-content-center text-center mb-5">
+          <div class="col-lg-5">
+            <h2 class="font-weight-bold heading text-primary mb-4">
+              Let's find more modules that's perfect for you
+            </h2>
+            <p class="text-black-50">
+             we provide All in one platforms
+            </p>
+          </div>
+        </div>
+        <div class="row justify-content-between mb-5">
+          <div class="col-lg-7 mb-5 mb-lg-0 order-lg-2">
+            <div class="img-about dots">
+              <img src="images/hero_bg_3.jpg" alt="Image" class="img-fluid" />
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="d-flex feature-h">
+              <span class="wrap-icon me-3">
+                <img src="images/hiring.png" alt="Image" class="img-fluid" />
+              </span>
+              <div class="feature-text">
+                <h3 class="heading">Hiring</h3>
+                <p class="text-black-50">
+                  a well-managed hiring process is crucial for building a strong workforce. By following a structured approach, focusing on cultural fit, and leveraging modern tools and technologies, companies can successfully attract and retain the best talent to drive business growth.
+                </p>
+              </div>
+            </div>
+
+            <div class="d-flex feature-h">
+              <span class="wrap-icon me-3">
+                <img src="images/onlinemeet.png" alt="Image" class="img-fluid" />
+              </span>
+              <div class="feature-text">
+                <h3 class="heading">online meeting</h3>
+                <p class="text-black-50">
+                  A powerful conferencing tool designed for enterprise-level collaboration, offering video conferencing, webinars, and messaging.
+                </p>
+              </div>
+            </div>
+
+            <div class="d-flex feature-h">
+              <span class="wrap-icon me-3">
+                <img src="images/onlinebook.png" alt="Image" class="img-fluid" />
+              </span>
+              <div class="feature-text">
+                <h3 class="heading">online Booking</h3>
+                <p class="text-black-50">
+                  Online booking platforms have revolutionized the real estate industry by enabling clients to schedule property viewings, consultations, and other services directly through digital interfaces. This streamlines the process for both clients and real estate professionals, enhancing efficiency and client satisfaction.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row section-counter mt-5">
+          <div
+            class="col-6 col-sm-6 col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="counter-wrap mb-5 mb-lg-0">
+              <span class="number"
+                ><span class="countup text-primary">3298</span></span
+              >
+              <span class="caption text-black-50"># of Buy Properties</span>
+            </div>
+          </div>
+          <div
+            class="col-6 col-sm-6 col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="counter-wrap mb-5 mb-lg-0">
+              <span class="number"
+                ><span class="countup text-primary">2181</span></span
+              >
+              <span class="caption text-black-50"># of Sell Properties</span>
+            </div>
+          </div>
+          <div
+            class="col-6 col-sm-6 col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <div class="counter-wrap mb-5 mb-lg-0">
+              <span class="number"
+                ><span class="countup text-primary">9316</span></span
+              >
+              <span class="caption text-black-50"># of All Properties</span>
+            </div>
+          </div>
+          <div
+            class="col-6 col-sm-6 col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
+            <div class="counter-wrap mb-5 mb-lg-0">
+              <span class="number"
+                ><span class="countup text-primary">7191</span></span
+              >
+              <span class="caption text-black-50"># of Agents</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="row justify-content-center footer-cta" data-aos="fade-up">
+        <div class="col-lg-7 mx-auto text-center">
+          <h2 class="mb-4">Be a part of our growing real state agents</h2>
+          <p>
+            <a
+              href="register.html"
+              target="_blank"
+              class="btn btn-primary text-white py-3 px-4"
+              >Apply for Real Estate agent</a
+            >
+          </p>
+        </div>
+        <!-- /.col-lg-7 -->
+      </div>
+      <!-- /.row -->
+    </div>
+
+    <div class="section section-5 bg-light">
+      <div class="container">
+        <div class="row justify-content-center text-center mb-5">
+          <div class="col-lg-6 mb-5">
+            <h2 class="font-weight-bold heading text-primary mb-4">
+              Our Agents
+            </h2>
+            <p class="text-black-50">
+              experience a smarter, faster, and more reliable way to handle all your real estate needs—all in one place.
+
+
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0">
+            <div class="h-100 person">
+              <img
+                src="images/person_1-min.jpg"
+                alt="Image"
+                class="img-fluid"
+              />
+
+              <div class="person-contents">
+                <h2 class="mb-0"><a href="#">James Doe</a></h2>
+                <span class="meta d-block mb-3">Real Estate Agent</span>
+                <p>
+                  online platform designed to simplify and enhance your real estate experience. Whether you are buying, selling, renting, or investing, we bring everything you need to one convenient place.
+                </p>
+
+                <ul class="social list-unstyled list-inline dark-hover">
+                  <li class="list-inline-item">
+                    <a href="#"><span class="icon-twitter"></span></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#"><span class="icon-facebook"></span></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#"><span class="icon-linkedin"></span></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#"><span class="icon-instagram"></span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0">
+            <div class="h-100 person">
+              <img
+                src="images/person_2-min.jpg"
+                alt="Image"
+                class="img-fluid"
+              />
+
+              <div class="person-contents">
+                <h2 class="mb-0"><a href="#">Jean Smith</a></h2>
+                <span class="meta d-block mb-3">Real Estate Agent</span>
+                <p>
+                  online platform designed to simplify and enhance your real estate experience. Whether you are buying, selling, renting, or investing, we bring everything you need to one convenient place.
+                </p>
+
+                <ul class="social list-unstyled list-inline dark-hover">
+                  <li class="list-inline-item">
+                    <a href="#"><span class="icon-twitter"></span></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#"><span class="icon-facebook"></span></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#"><span class="icon-linkedin"></span></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#"><span class="icon-instagram"></span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0">
+            <div class="h-100 person">
+              <img
+                src="images/person_3-min.jpg"
+                alt="Image"
+                class="img-fluid"
+              />
+
+              <div class="person-contents">
+                <h2 class="mb-0"><a href="#">Alicia Huston</a></h2>
+                <span class="meta d-block mb-3">Real Estate Agent</span>
+                <p>
+                  online platform designed to simplify and enhance your real estate experience. Whether you are buying, selling, renting, or investing, we bring everything you need to one convenient place.
+                </p>
+
+                <ul class="social list-unstyled list-inline dark-hover">
+                  <li class="list-inline-item">
+                    <a href="#"><span class="icon-twitter"></span></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#"><span class="icon-facebook"></span></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#"><span class="icon-linkedin"></span></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#"><span class="icon-instagram"></span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="widget">
+              <h3>Contact</h3>
+              <address>Indore,M.P.</address>
+              <ul class="list-unstyled links">
+                <li><a href="tel://11234567890">+91 9165166000</a></li>
+                <li>
+                  <a href="mailto:info@mydomain.com">info@pavitram.in</a>
+                </li>
+              </ul>
+            </div>
+           
+          </div>
+          <div class="col-lg-4">
+            <div class="widget">
+              <h3>Links</h3>
+              <ul class="list-unstyled links">
+                <li><a href="#">Our Vision</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+              </ul>
+
+              <ul class="list-unstyled social">
+                <li>
+                  <a href="#"><span class="icon-instagram"></span></a>
+                </li>
+                <li>
+                  <a href="#"><span class="icon-twitter"></span></a>
+                </li>
+                <li>
+                  <a href="#"><span class="icon-facebook"></span></a>
+                </li>
+                <li>
+                  <a href="#"><span class="icon-linkedin"></span></a>
+                </li>
+                <li>
+                  <a href="#"><span class="icon-pinterest"></span></a>
+                </li>
+                <li>
+                  <a href="#"><span class="icon-dribbble"></span></a>
+                </li>
+              </ul>
+            </div>
+            <!-- /.widget -->
+          </div>
+          <!-- /.col-lg-4 -->
+        </div>
+        <!-- /.row -->
+
+        <!-- <div class="row mt-5">
+          <div class="col-12 text-center">
+            <!-- 
+              **==========
+              NOTE: 
+              Please don't remove this copyright link unless you buy the license here https://untree.co/license/  
+              **==========
+            -->
+
+            
+      </div>
+      <!-- /.container -->
+    </div>
+    <!-- /.site-footer -->
+
+    <!-- Preloader -->
+    <div id="overlayer"></div>
+    <div class="loader">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/tiny-slider.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/counter.js"></script>
+    <script src="js/custom.js"></script>
+  </body>
+</html>
+<script>
+  async function search() {
+    // Optionally, prevent the form from submitting
+    // event.preventDefault();
+    alert("search function called");
+
+    // Get the city value from the input field (make sure the input has id="city")
+    const city = document.getElementById("city").value;
+    if (!city) {
+      alert("Please enter a city.");
+      return;
+    }
+alert(city);
+try { 
+const response = await fetch("http://localhost:8085/searchproperty", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ city: city }),
+    });
+    const result = await response.json(); 
+
+    if (response.ok) {
+      alert(result.message);
+      if (result.redirect) {
+        console.log("Redirecting to:", result.redirect);
+        window.location.href = result.redirect;
+      }
+    } else {
+      alert("Error: " + result.message);
+    }
+  } catch (error) {
+    console.error("Error getting property data:", error);
+    alert("Something went wrong!");
+  }
+}
+</script>

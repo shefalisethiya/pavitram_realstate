@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post Job Activity</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 20px;
+        max-width: 500px;
+        background-color: #f9f9f9;
+      }
+      form {
+        background: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        font-weight: bold;
+        margin-top: 10px;
+        display: block;
+      }
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      button {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 10px;
+        margin-top: 10px;
+        width: 100%;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #218838;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Post a Job</h2>
+    <form id="jobForm">
+      <label for="title">Job Title:</label>
+      <input type="text" id="title" name="title" required />
+
+      <label for="company">Company Name:</label>
+      <input type="text" id="company" name="company" required />
+
+      <label for="description">Job Description:</label>
+      <textarea
+        id="description"
+        name="description"
+        rows="4"
+        required
+      ></textarea>
+
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" required />
+
+      <label for="category">Job Category:</label>
+      <select id="category" name="category" required>
+        <option value="IT">IT</option>
+        <option value="Finance">Finance</option>
+        <option value="Marketing">Marketing</option>
+        <option value="Healthcare">Healthcare</option>
+        <option value="Education">Education</option>
+      </select>
+
+      <label for="deadline">Application Deadline:</label>
+      <input type="date" id="deadline" name="deadline" required />
+
+      <label for="salary">Salary Range:</label>
+      <input type="text" id="salary" name="salary" required />
+
+      <button type="submit">Post Job</button>
+    </form>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("jobForm");
+
+        form.addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent page reload
+
+          const title = document.getElementById("title").value.trim();
+          const company = document.getElementById("company").value.trim();
+          const description = document
+            .getElementById("description")
+            .value.trim();
+          const location = document.getElementById("location").value.trim();
+          const category = document.getElementById("category").value.trim();
+          const deadline = document.getElementById("deadline").value.trim();
+          const salary = document.getElementById("salary").value.trim();
+
+          if (
+            !title ||
+            !company ||
+            !description ||
+            !location ||
+            !category ||
+            !deadline ||
+            !salary
+          ) {
+            alert("Please fill out all fields before submitting.");
+            return;
+          }
+
+          fetch("http://localhost:8085/post-job", {
+            // Update with your actual API endpoint
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              title,
+              company,
+              description,
+              location,
+              category,
+              deadline,
+              salary,
+            }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              alert("Job posted successfully!");
+              console.log("Success:", data);
+              form.reset();
+            })
+            .catch((error) => {
+              alert("Error posting job.");
+              console.error("Error:", error);
+            });
+        });
+      });
+    </script>
+  </body>
+</html>

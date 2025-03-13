@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Finance Solutions Service Provider Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f7f7f7;
+      }
+      form {
+        max-width: 500px;
+        margin: auto;
+        background: #fff;
+        padding: 20px;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      input,
+      select,
+      textarea,
+      button {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+      }
+      button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Finance Solutions Service Provider Registration</h2>
+    <form
+      action="/submitFinanceService"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <!-- Provider Name -->
+      <label for="providerName">Your Full Name:</label>
+      <input
+        type="text"
+        id="providerName"
+        name="providerName"
+        placeholder="Enter your full name"
+        required
+      />
+
+      <!-- Company Name -->
+      <label for="companyName">Company Name:</label>
+      <input
+        type="text"
+        id="companyName"
+        name="companyName"
+        placeholder="Enter your company name"
+        required
+      />
+
+      <!-- Email Address -->
+      <label for="email">Email Address:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="your.email@example.com"
+        required
+      />
+
+      <!-- Contact Number -->
+      <label for="phone">Contact Number:</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="Enter your contact number"
+        required
+      />
+
+      <!-- Service Type -->
+      <label for="serviceType">Service Type:</label>
+      <select id="serviceType" name="serviceType" required>
+        <option value="">-- Select Service Type --</option>
+        <option value="homeLoan">Home Loans</option>
+        <option value="propertyInvestment">Property Investments</option>
+        <option value="commercialLoan">Commercial Loans</option>
+        <option value="refinancing">Refinancing</option>
+        <option value="other">Other</option>
+      </select>
+
+      <!-- Years of Experience -->
+      <label for="experience">Years of Experience:</label>
+      <input
+        type="number"
+        id="experience"
+        name="experience"
+        placeholder="Enter your experience in years"
+        required
+      />
+
+      <!-- Service Description -->
+      <label for="description">Service Description:</label>
+      <textarea
+        id="description"
+        name="description"
+        rows="4"
+        placeholder="Describe your financial services, expertise, and any special offers..."
+        required
+      ></textarea>
+
+      <!-- Licensing / Certification Upload (Optional) -->
+      <label for="uploadCertificate"
+        >Upload Certification / License (Optional):</label
+      >
+      <input type="file" id="uploadCertificate" name="uploadCertificate" />
+
+      <button type="submit">Submit Registration</button>
+    </form>
+  </body>
+</html>

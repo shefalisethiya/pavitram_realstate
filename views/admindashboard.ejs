@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+    <!-- site metas -->
+    <title>Pavitram-ALL IN ONE</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- site icon -->
+    <link rel="icon" href="/images/logo.png" type="image/png" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- site css -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- responsive css -->
+    <link rel="stylesheet" href="css/responsive.css" />
+    <!-- color css -->
+    <link rel="stylesheet" href="css/colors.css" />
+    <!-- select bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap-select.css" />
+    <!-- scrollbar css -->
+    <link rel="stylesheet" href="css/perfect-scrollbar.css" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/custom.css" />
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class="dashboard dashboard_1">
+    <div class="full_container">
+      <div class="inner_container">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+          <div class="sidebar_blog_1">
+            <div class="sidebar-header">
+              <div class="logo_section">
+                <!-- <a href="index.html" class="logo m-0 float-start">
+                  <img
+                    src="images/logo.png"
+                    style="height: 50px"
+                    alt="Image"
+                    class="img-fluid"
+                /></a> -->
+              </div>
+            </div>
+            <div class="sidebar_user_info">
+              <div class="icon_setting"></div>
+              <div class="user_profle_side">
+                <div class="user_img">
+                  <img class="img-responsive" src="images/logo.png" alt="#" />
+                </div>
+                <div class="user_info">
+                    <h6 id="userFullName">Admin</h6>
+                    <p><span class="online_animation"></span> Online</p>
+                  </div>
+                  <p><%= user.fullName %></p>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar_blog_2">
+            <h4>General</h4>
+            <ul class="list-unstyled components">
+              <li class="active">
+                <a
+                  href="#dashboard"
+                  data-toggle="collapse"
+                  aria-expanded="false"
+                  class="dropdown-toggle"
+                  ><i class="fa fa-dashboard yellow_color"></i>
+                  <span>Dashboard</span></a
+                >
+                <ul class="collapse list-unstyled" id="dashboard">
+                  <li>
+                    <a href="/agentdata">> <span>Agent Data</span></a>
+                  </li>
+                  <li>
+                    <a href="/agencydata">> <span>Agency Data</span></a>
+                  </li>
+                  <li>
+                    <a href="/jobseekerdata">> <span>jobseeker Data</span></a>
+                  </li>
+                  <li>
+                    <a href="/recuriterdata">> <span>Recruiter Data</span></a>
+                  </li>
+                </ul>
+                
+              </li>
+              <li>
+                <a
+                  href="#element"
+                  data-toggle="collapse"
+                  aria-expanded="false"
+                  class="dropdown-toggle"
+                  ><i class="fa fa-diamond purple_color"></i>
+                  <span>Modules</span></a
+                >
+                <ul class="collapse list-unstyled" id="element">
+                  <li>
+                    <a href="/jobseekerdata">> <span>Hiring</span></a>
+                  </li>
+                  <li>
+                    <a href="/meetdata"
+                      >> <span>Online Meeting/Booking</span></a
+                    >
+                  </li>
+                  <!-- <li>
+                    <a href="icons.html">> <span>Online Booking</span></a>
+                  </li> -->
+                  <li>
+                    <a href="/adminpostproper">> <span>Post Own Property</span></a>
+                  </li>
+                  <li>
+                    <a href="/postactivity">> <span>Post Activity</span></a>
+                  </li>
+                  <li>
+                    <a href="/agetAllPostedProperty"> <span>update_property_current_status</span></a>
+                  </li>
+                  <li>
+                    <li>
+                      <a href="/getpostedProperty"> <span>approve _property for posting</span></a>
+                    </li>
+                    <li>
+                    <a href="/adminsignup">> <span>create other admin</span></a>
+                  </li>
+                  <li>
+                    <a href="/getcontactdata">> <span>get contact form data</span></a>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <a
+                  href="#apps"
+                  data-toggle="collapse"
+                  aria-expanded="false"
+                  class="dropdown-toggle"
+                  ><i class="fa fa-object-group blue2_color"></i>
+                  <span>Setting</span></a
+                >
+                <ul class="collapse list-unstyled" id="apps">
+                  <li>
+                    <a href="email.html">> <span>Update Profile</span></a>
+                  </li>
+                  <li>
+                    <a href="calendar.html">> <span>Need to Approve</span></a>
+                  </li>
+                  <li>
+                    <a href="media_gallery.html">> <span>Logout</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!-- end sidebar -->
+        <!-- right content -->
+        <div id="content">
+          <!-- topbar -->
+          <div class="topbar">
+            <nav class="navbar navbar-expand-lg navbar-light">
+              <div class="full">
+                <!-- <button
+                  type="button"
+                  id="sidebarCollapse"
+                  class="sidebar_toggle"
+                >
+                  <i class="fa fa-bars"></i>
+                </button> -->
+                <div class="logo_section">
+                  <a href="index.html" class="logo m-0 float-start">
+                    <img
+                      src="images/logo.png"
+                      style="height: 40px"
+                      alt="Image"
+                      class="img-fluid"
+                  /></a>
+                </div>
+                <div class="right_topbar">
+                  <div class="icon_info">
+                    <ul>
+                      <!-- <li>
+                        <a href="#"
+                          ><i class="fa fa-bell-o"></i
+                          ><span class="badge">2</span></a
+                        >
+                      </li> -->
+                      <!-- <li>
+                        <a href="#"><i class="fa fa-question-circle"></i></a>
+                      </li>
+                      <li> -->
+                      <!-- <a href="#"
+                          ><i class="fa fa-envelope-o"></i
+                          ><span class="badge">3</span></a
+                        >
+                      </li> -->
+                    </ul>
+                    <ul class="user_profile_dd">
+                      <li>
+                        <a class="dropdown-toggle" data-toggle="dropdown"
+                          ><img
+                            class="img-responsive rounded-circle"
+                            src="images/logo.png"
+                            alt="#"
+                          />
+                            <span class="name_user">
+                              </span><%= user.fullName %></p>
+                            </span>
+                
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="/myprofile"
+                            >My Profile</a
+                          >
+
+                          <a class="dropdown-item" href="/logout"
+                            ><span>Log Out</span> <i class="fa fa-sign-out"></i
+                          ></a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+          <!-- end topbar -->
+          <!-- dashboard inner -->
+          <div class="midde_cont">
+            <div class="container-fluid">
+              <div class="row column_title">
+                <div class="col-md-12">
+                  <div class="page_title">
+                    <h2>Dashboard</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="row column1">
+                <div class="col-md-6 col-lg-3">
+                  <div class="full counter_section margin_bottom_30">
+                    <div class="couter_icon">
+                      <div>
+                        <i class="fa fa-user yellow_color"></i>
+                      </div>
+                    </div>
+                    <div class="counter_no">
+                      <div>
+                        <p class="total_no"><%= agentCount %></p>
+                        <p class="head_couter">Total Property for</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                  <div class="full counter_section margin_bottom_30">
+                    <div class="couter_icon">
+                      <div>
+                        <i class="fa fa-clock-o blue1_color"></i>
+                      </div>
+                    </div>
+                    <div class="counter_no">
+                      <div>
+                        <p class="total_no"><%= notVerifiedCount %></p>
+                        <li>
+                            <a href="/approval">> <span>Need For Approval</span></a>
+                          </li>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                  <div class="full counter_section margin_bottom_30">
+                    <div class="couter_icon">
+                      <div>
+                        <i class="fa fa-cloud-download green_color"></i>
+                      </div>
+                    </div>
+                    <div class="counter_no">
+                      <div>
+                        <p class="total_no"><%= agentCount %></p>
+                        <p class="head_couter">Total Agent</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                  <div class="full counter_section margin_bottom_30">
+                    <div class="couter_icon">
+                      <div>
+                        <i class="fa fa-comments-o red_color"></i>
+                      </div>
+                    </div>
+                    <div class="counter_no">
+                      <div>
+                        <p class="total_no"><%= agencyCount %></p>
+                        <p class="head_couter">Total Agency</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row column1">
+                <div class="col-md-6 col-lg-3">
+                  <div class="full counter_section margin_bottom_30">
+                    <div class="couter_icon">
+                      <div>
+                        <i class="fa fa-user yellow_color"></i>
+                      </div>
+                    </div>
+                    <div class="counter_no">
+                      <div>
+                        <p class="total_no">3500</p>
+                        <p class="head_couter">Property for Sell</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                  <div class="full counter_section margin_bottom_30">
+                    <div class="couter_icon">
+                      <div>
+                        <i class="fa fa-clock-o blue1_color"></i>
+                      </div>
+                    </div>
+                    <div class="counter_no">
+                      <div>
+                        <p class="total_no">223</p>
+                        <p class="head_couter">Property for Rent</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                  <div class="full counter_section margin_bottom_30">
+                    <div class="couter_icon">
+                      <div>
+                        <i class="fa fa-cloud-download green_color"></i>
+                      </div>
+                    </div>
+                    <div class="counter_no">
+                      <div>
+                        <p class="total_no">2,805</p>
+                        <p class="head_couter">Propeety for Exchange</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                  <div class="full counter_section margin_bottom_30">
+                    <div class="couter_icon">
+                      <div>
+                        <i class="fa fa-comments-o red_color"></i>
+                      </div>
+                    </div>
+                    <div class="counter_no">
+                      <div>
+                        <p class="total_no"><%= adminCount %></p>
+                        <p class="head_couter">Total admin</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- graph -->
+              <div class="row column2 graph margin_bottom_30">
+                <div class="col-md-l2 col-lg-12">
+                  <div class="white_shd full">
+                    <div class="full graph_head">
+                      <div class="heading1 margin_0">
+                        <h2 style="color: #002147;">ALL USERS</h2><br>
+                      </div>
+                    </div>
+                    <div class="table-container">
+                       
+                        <table style="border: 1px solid black; border-collapse: collapse;">
+                            <thead>
+                              <tr style="background-color: rgb(11, 141, 167);">
+                                <th style="color: black; text-align: center;">FullName</th>
+                                <th style="color: black; text-align: center;">Email</th>
+                                <th style="color: black; text-align: center;">Contact</th>
+                                <th style="color: black; text-align: center;">UserType</th>
+                                <th style="color: black; text-align: center;">CreatedAt</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <% allData.forEach(user => { %>
+                                <tr>
+                                  <td style="border: 1px solid black;"><%= user.fullName %></td>
+                                  <td style="border: 1px solid black;"><%= user.email %></td>
+                                  <td style="border: 1px solid black;"><%= user.mobileNo %></td>
+                                  <td style="border: 1px solid black;">
+                                    <% 
+                                      let userType = '';
+                                      if (user.status === 0) {
+                                        userType = 'Agent';
+                                      } else if (user.status === 1) {
+                                        userType = 'Admin';
+                                      } else if (user.status === 2) {
+                                        userType = 'Agency';
+                                      }else if (user.status === 3) {
+                                        userType = 'jobseeker';
+                                      }else if (user.status === 4) {
+                                        userType = 'recruiter';
+                                      }
+                                    %>
+                                    <%= userType %>
+                                  </td>
+                                  <td style="border: 1px solid black;"> <% 
+                                    // Format the createdAt field to show only date and time
+                                    const createdAt = new Date(user.createdAt);
+                                    const formattedDate = createdAt.toISOString().split('T');
+                                    const formattedTime = formattedDate[1].split('.')[0]; // Get the time part
+                                    const formattedDateString = formattedDate[0] + ' ' + formattedTime;
+                                  %>
+                                  <%= formattedDateString %></td>
+                                </tr>
+                              <% }) %>
+                            </tbody>
+                          </table>
+                          
+                    </div>  
+              <!-- end graph -->
+              
+              
+            </div>
+            <!-- footer -->
+            <div class="container-fluid">
+              <div class="footer">
+                <p>
+                  Copyright @ 2000 By pavitram <br /><br />
+                  
+                  <a href="https://themewagon.com/">ALL IN ONE </a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- end dashboard inner -->
+        </div>
+      </div>
+    </div>
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- wow animation -->
+    <script src="js/animate.js"></script>
+    <!-- select country -->
+    <script src="js/bootstrap-select.js"></script>
+    <!-- owl carousel -->
+    <script src="js/owl.carousel.js"></script>
+    <!-- chart js -->
+    <script src="js/Chart.min.js"></script>
+    <script src="js/Chart.bundle.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/analyser.js"></script>
+    <!-- nice scrollbar -->
+    <script src="js/perfect-scrollbar.min.js"></script>
+    <script>
+      var ps = new PerfectScrollbar("#sidebar");
+    </script>
+    <!-- custom js -->
+    <script src="js/custom.js"></script>
+    <script src="js/chart_custom_style1.js"></script>
+  </body>
+</html>
