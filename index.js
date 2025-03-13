@@ -1699,6 +1699,54 @@ app.get("/jobs", (req, res) => {
     res.status(200).json(results);
   });
 });
+app.get("/propertyforrent", (req, res) => {
+  const sql = "SELECT * FROM property WHERE pFor = 'Rent'";
+
+  connection.query(sql, (err, results) => {
+    if (err) {
+      console.error("Error fetching jobs:", err);
+      return res.status(500).json({ error: "Error retrieving job listings" });
+    }
+    res.status(200).json(results);
+  });
+});
+app.get("/propertyforsell", (req, res) => {
+  const sql = "SELECT * FROM property WHERE pFor = 'sell'";
+
+  connection.query(sql, (err, results) => {
+    if (err) {
+      console.error("Error fetching jobs:", err);
+      return res.status(500).json({ error: "Error retrieving job listings" });
+    }
+    res.status(200).json(results);
+  });
+});
+app.get("/propertyforexchange", (req, res) => {
+  const sql = "SELECT * FROM property WHERE pFor = 'exchange'";
+
+  connection.query(sql, (err, results) => {
+    if (err) {
+      console.error("Error fetching jobs:", err);
+      return res.status(500).json({ error: "Error retrieving job listings" });
+    }
+    res.status(200).json(results);
+  });
+});
+app.get("/propertybycity", (req, res) => {
+  const city = req.body.city;
+
+  const sql = "SELECT * FROM property WHERE city = ?";
+
+  connection.query(sql, [city], (err, results) => {
+    if (err) {
+      console.error("Error fetching properties:", err);
+      return res.status(500).json({ error: "Error retrieving properties" });
+    }
+
+    res.status(200).json(results);
+  });
+});
+
 app.listen(port, "0.0.0.0", () => {
   console.log(`Server running at http://0.0.0.0:${port}/`);
 });
