@@ -9,7 +9,6 @@ app.use((req, res, next) => {
   res.set("Expires", "0");
   next();
 });
-
 const cors = require("cors");
 const fs = require("fs");
 const session = require("express-session");
@@ -23,58 +22,25 @@ app.use(
 );
 app.use(cors({ origin: "http://localhost:8085", credentials: true }));
 const uploadDir = path.join(__dirname, "public", "upload");
-
-// Ensure the directory exists
 if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir, { recursive: true });
   console.log("✅ Upload directory created:", uploadDir);
 }
-
 app.use(express.urlencoded({ extended: true }));
 const ejs = require("ejs");
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 const port = 8085;
 app.use(express.static(path.join(__dirname, "public")));
-// app.get("/", (req, res) => {
-//   res.redirect("/index");
-// });
-// Redirect root to /index
 app.get("/", (req, res) => {
   res.render("/index");
 });
-
-// app.get("/index", (req, res) => {
-//   const city = req.query.city;
-//   let query = "SELECT * FROM property";
-//   let queryParams = [];
-
-//   if (city) {
-//     query += " WHERE city LIKE ?";
-//     queryParams.push(`%${city}%`);
-//   }
-
-//   connection.query(query, queryParams, (err, results) => {
-//     if (err) {
-//       console.error("Database error:", err);
-//       return res.status(500).json({ message: "Database error", error: err });
-//     }
-//     res.render("index", { propertyData: results, searchCity: city });
-//   });
-// });
-
 const connection = mysql.createPool({
   host: "localhost",
   user: "root",
   password: "",
   database: "realstate",
 });
-// connection.connect((err) => {
-//   if (err) {
-//     console.error("Database connection failed: " + err.stack);
-//     return;
-//   }
-// });
 app.post("/register", async (req, res) => {
   try {
     const { fullname, email, mobileNo, whatsappNo, password, userType } =
@@ -385,11 +351,9 @@ app.get("/meetdata", (req, res) => {
       console.error("Database Error:", err);
       return res.status(500).send("Database error");
     }
-    // Render the 'meetdata' template and pass the retrieved data under the key 'meetData'
     res.render("meetdata", { meetData: results, fullName });
   });
 });
-
 app.get("/otpverify", (req, res) => {
   return res.render("otpverify");
 });
@@ -522,116 +486,16 @@ app.get("/adminpostproper", (req, res) => {
   });
 });
 const multer = require("multer");
-
-// Configure storage settings
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    // Ensure this directory exists
     cb(null, path.join(__dirname, "public", "uploads"));
   },
   filename: (req, file, cb) => {
-    // Generate a unique filename
     cb(null, Date.now() + "-" + file.originalname);
   },
 });
-
-// Initialize multer with the storage configuration
 const upload = multer({ storage: storage });
-
-// app.post("/registerProperty", upload.single("uploadImage"), (req, res) => {
-//   const {
-//     PropertyName,
-//     OwnerName,
-//     PropertyType,
-//     PropertyStatus,
-//     totalfloor,
-//     floorNo,
-//     transactionsType,
-//     Face,
-//     TypeOfOwner,
-//     YearOfConstruction,
-//     price,
-//     BookingAmount,
-//     address,
-//     landMark,
-//     flooring,
-//     overLooking,
-//     additionalRoom,
-//     description,
-//     propertyAction, // radio button value: sell, rent, or exchange
-//   } = req.body;
-
-//   // Get the file name if a file was uploaded; otherwise, set it to null.
-//   const propertyImage = req.file ? req.file.filename : null;
-
-//   // Build the INSERT query with 21 columns.
-//   const query = `
-//     INSERT INTO property (
-//       pName,
-//       ownerName,
-//       agentName,
-//       pType,
-//       pStatus,
-//       totalfloor,
-//       fNo,
-//       transactionType,
-//       face,
-//       typeofowner,
-//       yearOfConstruction,
-//       price,
-//       bookingAmount,
-//       address,
-//       city,
-//       landmark,
-//       floaring,
-//       overlooking,
-//       additionalRoom,
-//       description,
-//       pFor,
-//       images
-//     ) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-//   `;
-
-//   connection.query(
-//     query,
-//     [
-//       PropertyName, // pName
-//       OwnerName, // ownerName
-//       "", // agentName (empty since not provided)
-//       PropertyType, // pType
-//       PropertyStatus, // pStatus
-//       totalfloor, // totalfloor
-//       floorNo, // fNo
-//       transactionsType, // transactionType
-//       Face, // face
-//       TypeOfOwner, // typeofowner
-//       YearOfConstruction, // yearOfConstruction
-//       price, // price
-//       BookingAmount, // bookingAmount
-//       address, // address
-//       city,
-//       landMark, // landmark
-//       flooring, // flooring
-//       overLooking, // overlooking
-//       additionalRoom, // additionalRoom
-//       description, // description
-//       propertyAction, // pFor (property action)
-//       propertyImage, // images
-//     ],
-//     (err, result) => {
-//       if (err) {
-//         console.error("Database Error:", err);
-//         return res.status(500).json({ message: "Database error", error: err });
-//       }
-//       res.json({
-//         message: "Property registered successfully",
-//         propertyId: result.insertId,
-//       });
-//     }
-//   );
-// });
 app.post("/registerProperty", upload.single("uploadImage"), (req, res) => {
-  // Destructure all expected fields from the request body, including 'city'
   const {
     PropertyName,
     OwnerName,
@@ -646,19 +510,15 @@ app.post("/registerProperty", upload.single("uploadImage"), (req, res) => {
     price,
     BookingAmount,
     address,
-    city, // added city
+    city,
     landMark,
-    flooring, // assuming this is the correct variable and column name
-    overLooking, // assuming this maps to the 'overlooking' column
+    flooring,
+    overLooking,
     additionalRoom,
     description,
-    propertyAction, // radio button value: sell, rent, or exchange
+    propertyAction,
   } = req.body;
-
-  // Get the file name if a file was uploaded; otherwise, set it to null.
   const propertyImage = req.file ? req.file.filename : null;
-
-  // Build the INSERT query with 22 columns.
   const query = `
     INSERT INTO property (
       pName,
@@ -689,28 +549,28 @@ app.post("/registerProperty", upload.single("uploadImage"), (req, res) => {
   connection.query(
     query,
     [
-      PropertyName, // pName
-      OwnerName, // ownerName
-      "", // agentName (empty string since not provided)
-      PropertyType, // pType
-      PropertyStatus, // pStatus
-      totalfloor, // totalfloor
-      floorNo, // fNo
-      transactionsType, // transactionType
-      Face, // face
-      TypeOfOwner, // typeofowner
-      YearOfConstruction, // yearOfConstruction
-      price, // price
-      BookingAmount, // bookingAmount
-      address, // address
-      city, // city
-      landMark, // landmark
-      flooring, // flooring
-      overLooking, // overlooking
-      additionalRoom, // additionalRoom
-      description, // description
-      propertyAction, // pFor (property action)
-      propertyImage, // images
+      PropertyName,
+      OwnerName,
+      "",
+      PropertyType,
+      PropertyStatus,
+      totalfloor,
+      floorNo,
+      transactionsType,
+      Face,
+      TypeOfOwner,
+      YearOfConstruction,
+      price,
+      BookingAmount,
+      address,
+      city,
+      landMark,
+      flooring,
+      overLooking,
+      additionalRoom,
+      description,
+      propertyAction,
+      propertyImage,
     ],
     (err, result) => {
       if (err) {
@@ -761,7 +621,6 @@ app.get("/getmeetdetail", (req, res) => {
     if (err) {
       return res.status(500).json({ message: "Database error", error: err });
     }
-    // console.log("getMeetingsQuery", getMeetingsQuery);
     return res.render("getmeetdetail", {
       meetData: meetResults,
       user: req.session.user,
@@ -783,22 +642,15 @@ app.get("/recuriterdashboard", (req, res) => {
   if (!req.session.user || !req.session.user.fullName) {
     return res.redirect("/login");
   }
-
   const fullName = req.session.user.fullName;
-
-  // Query to fetch all job seekers' data.
   const query = `SELECT * FROM jobseeker`;
-
   connection.query(query, (err, results) => {
     if (err) {
       console.error("Database Error:", err);
       return res.status(500).json({ message: "Database error", error: err });
     }
-
-    // Process each jobseeker's resume field to extract just the file name.
     const updatedResults = results.map((jobseeker) => {
       if (jobseeker.resume) {
-        // Use path.basename() to extract the file name from the full path.
         jobseeker.resume = path.basename(jobseeker.resume);
       }
       return jobseeker;
@@ -812,22 +664,15 @@ app.get("/jobseekerdata", (req, res) => {
   if (!req.session.user || !req.session.user.fullName) {
     return res.redirect("/adminlogin");
   }
-
   const fullName = req.session.user.fullName;
-
-  // Query to fetch all job seekers' data.
   const query = `SELECT * FROM jobseeker`;
-
   connection.query(query, (err, results) => {
     if (err) {
       console.error("Database Error:", err);
       return res.status(500).json({ message: "Database error", error: err });
     }
-
-    // Process each jobseeker's resume field to extract just the file name.
     const updatedResults = results.map((jobseeker) => {
       if (jobseeker.resume) {
-        // Use path.basename() to extract the file name from the full path.
         jobseeker.resume = path.basename(jobseeker.resume);
       }
       return jobseeker;
@@ -840,16 +685,12 @@ app.get("/postactivity", (req, res) => {
   if (!req.session.user || !req.session.user.fullName) {
     return res.redirect("/adminlogin");
   }
-
   const fullName = req.session.user.fullName;
-
   const getAllQuery = "SELECT * FROM register";
-
   connection.query(getAllQuery, (err, allResults) => {
     if (err) {
       return res.status(500).json({ message: "Database error", error: err });
     }
-
     const agentCount = allResults.filter((user) => user.status === 0).length;
     const adminCount = allResults.filter((user) => user.status === 1).length;
     const agencyCount = allResults.filter((user) => user.status === 2).length;
@@ -859,8 +700,6 @@ app.get("/postactivity", (req, res) => {
     const notVerifiedCount = allResults.filter(
       (user) => Number(user.approval) === 0
     ).length;
-
-    // Remove extra space before the view name.
     return res.render("postactivity", {
       allData: allResults,
       agentCount,
@@ -875,7 +714,6 @@ app.get("/postactivity", (req, res) => {
 app.post("/postactivity", upload.none(), (req, res) => {
   const { organizerName, eventName, eventdate, eventtime, eventrelatedto } =
     req.body;
-
   if (
     !organizerName ||
     !eventName ||
@@ -885,7 +723,6 @@ app.post("/postactivity", upload.none(), (req, res) => {
   ) {
     return res.status(400).json({ message: "All fields are required" });
   }
-
   const query = `
     INSERT INTO postactivity (
       organizerName,
@@ -895,7 +732,6 @@ app.post("/postactivity", upload.none(), (req, res) => {
       eventrelatedto
     ) VALUES (?, ?, ?, ?, ?)
   `;
-
   connection.query(
     query,
     [organizerName, eventName, eventdate, eventtime, eventrelatedto],
@@ -911,53 +747,40 @@ app.post("/postactivity", upload.none(), (req, res) => {
     }
   );
 });
-
 app.get("/recuriterdata", (req, res) => {
   if (!req.session.user || !req.session.user.fullName) {
     return res.redirect("/adminlogin");
   }
-
   const fullName = req.session.user.fullName;
-
-  // Query to fetch all job seekers' data.
   const query = `SELECT * FROM  recuriter`;
-
   connection.query(query, (err, results) => {
     if (err) {
       console.error("Database Error:", err);
       return res.status(500).json({ message: "Database error", error: err });
     }
-
-    // Process each jobseeker's resume field to extract just the file name.
     const updatedResults = results.map((jobseeker) => {
       if (jobseeker.resume) {
-        // Use path.basename() to extract the file name from the full path.
         jobseeker.resume = path.basename(jobseeker.resume);
       }
       return jobseeker;
     });
-
     res.render("recuriterdata", { fullName, jobSeekers: updatedResults });
   });
 });
 app.get("/nakuridashboard", (req, res) => {
   if (!req.session.user || !req.session.user.fullName) {
-    return res.redirect("/login"); // Redirect if user is not logged in
-  }
-
-  const fullName = req.session.user.fullName; // Get fullName from session
-
-  res.render("nakuridashboard", { fullName }); // Pass fullName to the template
-});
-
-app.get("/agencydashboard", (req, res) => {
-  if (!req.session.user || !req.session.user.fullName) {
-    return res.redirect("/adminlogin");
+    return res.redirect("/login");
   }
 
   const fullName = req.session.user.fullName;
 
-  // Query to fetch meetings where agent_name matches the logged-in user's fullName
+  res.render("nakuridashboard", { fullName });
+});
+app.get("/agencydashboard", (req, res) => {
+  if (!req.session.user || !req.session.user.fullName) {
+    return res.redirect("/adminlogin");
+  }
+  const fullName = req.session.user.fullName;
   const query = `
     SELECT 
      *
@@ -974,7 +797,7 @@ app.get("/agencydashboard", (req, res) => {
 
     res.render("agencydashboard", {
       fullName: fullName,
-      meetings: results, // Sending retrieved meetings data to the template
+      meetings: results,
     });
   });
 });
@@ -982,10 +805,8 @@ app.get("/agentdashboard", (req, res) => {
   if (!req.session.user || !req.session.user.fullName) {
     return res.redirect("/adminlogin");
   }
-
   const fullName = req.session.user.fullName;
   console.log("login user full name", fullName);
-  // Query to fetch meetings where agent_name matches the logged-in user's fullName
   const query = `
     SELECT 
      *
@@ -993,20 +814,17 @@ app.get("/agentdashboard", (req, res) => {
 
     WHERE agent_name = ?;
   `;
-
   connection.query(query, [fullName], (err, results) => {
     if (err) {
       console.error("Database Error:", err);
       return res.status(500).json({ message: "Database error", error: err });
     }
-
     res.render("agentdashboard", {
       fullName: fullName,
-      meetings: results, // Sending retrieved meetings data to the template
+      meetings: results,
     });
   });
 });
-
 app.post("/meetings", async (req, res) => {
   try {
     const { name, email, pname, aname, meetDate, meetTime } = req.body;
@@ -1061,7 +879,6 @@ app.get("/get-agent", (req, res) => {
   if (!pname) {
     return res.status(400).json({ message: "Property name is required" });
   }
-
   const agentQuery = "SELECT agentName FROM property WHERE pName = ?";
   connection.query(agentQuery, [pname], (err, results) => {
     if (err) {
@@ -1082,7 +899,6 @@ app.post("/updateApproval", (req, res) => {
   if (!users || users.length === 0) {
     return res.status(400).json({ message: "No users selected." });
   }
-
   let updateQueries = users.map((user) => {
     return new Promise((resolve, reject) => {
       const updateQuery = "UPDATE register SET approval = ? WHERE id = ?";
@@ -1096,7 +912,6 @@ app.post("/updateApproval", (req, res) => {
       );
     });
   });
-
   Promise.all(updateQueries)
     .then(() => res.json({ message: "Approval status updated successfully." }))
     .catch((err) => {
@@ -1110,7 +925,6 @@ app.post("/updatePropertyCurrentStatus", (req, res) => {
   if (!users || users.length === 0) {
     return res.status(400).json({ message: "No  selection." });
   }
-
   let updateQueries = users.map((user) => {
     return new Promise((resolve, reject) => {
       const updateQuery =
@@ -1125,7 +939,6 @@ app.post("/updatePropertyCurrentStatus", (req, res) => {
       );
     });
   });
-
   Promise.all(updateQueries)
     .then(() => res.json({ message: "Approval status updated successfully." }))
     .catch((err) => {
@@ -1133,14 +946,11 @@ app.post("/updatePropertyCurrentStatus", (req, res) => {
       res.status(500).json({ message: "Database error", error: err });
     });
 });
-
 app.post("/updatePropertyapprovalStatus", (req, res) => {
   const { users } = req.body;
-
   if (!users || users.length === 0) {
     return res.status(400).json({ message: "No  selection." });
   }
-
   let updateQueries = users.map((user) => {
     return new Promise((resolve, reject) => {
       const updateQuery = "UPDATE property SET approve = ? WHERE id = ?";
@@ -1154,7 +964,6 @@ app.post("/updatePropertyapprovalStatus", (req, res) => {
       );
     });
   });
-
   Promise.all(updateQueries)
     .then(() => res.json({ message: "Approval status updated successfully." }))
     .catch((err) => {
@@ -1268,7 +1077,6 @@ app.post("/recruiterregister", upload.single("resume"), (req, res) => {
         if (results.length > 0) {
           return res.status(400).json({ message: "User already exists" });
         }
-
         connection.query(
           "INSERT INTO recuriter (fullName, email, mobileNo, organizationName, currentCity,logo) VALUES (?, ?, ?, ?, ?, ?)",
           [
@@ -1310,17 +1118,14 @@ app.post("/searchproperty", async (req, res) => {
   try {
     const { city } = req.body;
     if (!city) {
-      // Render index with an error message if no city provided
       return res.render("index", {
         propertyData: [],
         error: "City is required",
       });
     }
-
     connection.query(
       "SELECT * FROM property WHERE city = ?",
       [city],
-
       (err, results) => {
         console.log("Fetched result:", results);
         if (err) {
@@ -1330,8 +1135,6 @@ app.post("/searchproperty", async (req, res) => {
           propertyData: [],
           error: "Database error",
         });
-
-        // Render the index view with fetched property data
         res.render("index", { propertyData: results, error: null });
       }
     );
@@ -1355,9 +1158,7 @@ app.post("/submitMaterial", upload.single("uploadImage"), async (req, res) => {
       supplier,
       location,
     } = req.body;
-
     const imageFilename = req.file ? req.file.filename : null;
-
     const insertQuery = `
       INSERT INTO building_materials (
         materialName,
@@ -1372,7 +1173,6 @@ app.post("/submitMaterial", upload.single("uploadImage"), async (req, res) => {
       ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
     console.log("Raw query result:", insertQuery);
-    // Use await with the promise-based connection
     const [result] = await connection
       .promise()
       .execute(insertQuery, [
@@ -1386,7 +1186,6 @@ app.post("/submitMaterial", upload.single("uploadImage"), async (req, res) => {
         location,
         imageFilename,
       ]);
-
     console.log("Inserted material with ID:", result.insertId);
     res.send(`
       <h2>Material Registered Successfully!</h2>
@@ -1415,8 +1214,6 @@ app.post(
       } = req.body;
 
       const fileName = req.file ? req.file.filename : null;
-
-      // Example INSERT query – adjust table/column names as needed
       const query = `
       INSERT INTO maintenance_providers (
         providerName,
@@ -1430,7 +1227,6 @@ app.post(
         fileName
       ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
-
       const [result] = await connection
         .promise()
         .execute(query, [
@@ -1444,7 +1240,6 @@ app.post(
           description,
           fileName,
         ]);
-
       console.log("Inserted provider with ID:", result.insertId);
       res.send(`
       <h2>Provider Registered Successfully!</h2>
@@ -1462,7 +1257,6 @@ app.post(
   upload.single("uploadCertificate"),
   async (req, res) => {
     try {
-      // Destructure form fields from req.body
       const {
         providerName,
         companyName,
@@ -1472,11 +1266,7 @@ app.post(
         experience,
         description,
       } = req.body;
-
-      // If a file is uploaded, Multer will set req.file. Otherwise, use null.
       const certificateFilename = req.file ? req.file.filename : null;
-
-      // Build the INSERT query (adjust table/column names as needed)
       const insertQuery = `
       INSERT INTO finance_service_providers (
         providerName,
@@ -1489,8 +1279,6 @@ app.post(
         certificateFilename
       ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     `;
-
-      // Execute the query using the promise-based pool
       const [result] = await connection
         .promise()
         .query(insertQuery, [
@@ -1503,7 +1291,6 @@ app.post(
           description,
           certificateFilename,
         ]);
-
       console.log(
         "Inserted finance service provider with ID:",
         result.insertId
@@ -1521,7 +1308,6 @@ app.post(
 );
 app.post("/submitBooking", async (req, res) => {
   try {
-    // Destructure form fields from the request body
     const {
       fullName,
       email,
@@ -1531,8 +1317,6 @@ app.post("/submitBooking", async (req, res) => {
       propertyAddress,
       comments,
     } = req.body;
-
-    // Build the INSERT query (adjust table and column names as needed)
     const insertQuery = `
       INSERT INTO service_bookings (
         fullName,
@@ -1544,8 +1328,6 @@ app.post("/submitBooking", async (req, res) => {
         comments
       ) VALUES (?, ?, ?, ?, ?, ?, ?)
     `;
-
-    // Execute the query using the promise-based pool
     const [result] = await await connection
       .promise()
       .query(insertQuery, [
@@ -1557,10 +1339,7 @@ app.post("/submitBooking", async (req, res) => {
         propertyAddress,
         comments,
       ]);
-
     console.log("Inserted booking with ID:", result.insertId);
-
-    // Respond with a success message (or redirect as needed)
     res.send(`
       <h2>Booking Submitted Successfully!</h2>
       <p>Booking ID: ${result.insertId}</p>
@@ -1574,7 +1353,6 @@ app.post("/submitBooking", async (req, res) => {
 app.post("/Contact", (req, res) => {
   const { userName, userEmail, subject, message } = req.body;
   console.log("contact api hitted:req.body:", req.body);
-  // Insert data into the 'contact' table
   const sql =
     "INSERT INTO contact (userName, userEmail, subject, message) VALUES (?, ?, ?, ?)";
   connection.query(
@@ -1586,8 +1364,6 @@ app.post("/Contact", (req, res) => {
         return res.status(500).send("Error saving data.");
       }
       console.log("Data inserted successfully:", result);
-
-      // Send response
       res.send(`
       <h2>Thank you, ${userName}!</h2>
       <p>Your message has been received.</p>
@@ -1601,14 +1377,11 @@ app.post("/Contact", (req, res) => {
 });
 app.get("/getContactdata", (req, res) => {
   const sql = "SELECT * FROM contact";
-
   connection.query(sql, (err, results) => {
     if (err) {
       console.error("Error fetching data:", err);
       return res.status(500).send("Error fetching contact details.");
     }
-
-    // Render 'contact.ejs' and pass the contact details
     res.render("contact", { contacts: results });
   });
 });
@@ -1622,14 +1395,11 @@ app.get("/getproperties", (req, res) => {
         .status(500)
         .json({ error: "Error fetching property details." });
     }
-
-    // Send property details as a JSON response
     res.json(results);
   });
 });
 app.get("/get-maintenance-providers", (req, res) => {
   const sql = "SELECT * FROM maintenance_providers";
-
   connection.query(sql, (err, results) => {
     if (err) {
       console.error("Error fetching data:", err);
@@ -1637,28 +1407,22 @@ app.get("/get-maintenance-providers", (req, res) => {
         .status(500)
         .json({ error: "Error fetching maintenance providers." });
     }
-
-    // Send data as JSON response
     res.json(results);
   });
 });
 app.get("/get-post-activities", (req, res) => {
   const sql = "SELECT * FROM postactivity";
-
   connection.query(sql, (err, results) => {
     if (err) {
       console.error("Error fetching data:", err);
       return res.status(500).json({ error: "Error fetching post activities." });
     }
-
-    // Send data as JSON response
     res.json(results);
   });
 });
 app.post("/post-job", (req, res) => {
   const { title, company, description, location, category, deadline, salary } =
     req.body;
-
   if (
     !title ||
     !company ||
@@ -1670,10 +1434,8 @@ app.post("/post-job", (req, res) => {
   ) {
     return res.status(400).json({ error: "All fields are required" });
   }
-
   const sql =
     "INSERT INTO jobs (title, company, description, location, category, deadline, salary) VALUES (?, ?, ?, ?, ?, ?, ?)";
-
   connection.query(
     sql,
     [title, company, description, location, category, deadline, salary],
@@ -1690,7 +1452,6 @@ app.post("/post-job", (req, res) => {
 });
 app.get("/jobs", (req, res) => {
   const sql = "SELECT * FROM jobs";
-
   connection.query(sql, (err, results) => {
     if (err) {
       console.error("Error fetching jobs:", err);
@@ -1701,7 +1462,6 @@ app.get("/jobs", (req, res) => {
 });
 app.get("/propertyforrent", (req, res) => {
   const sql = "SELECT * FROM property WHERE pFor = 'Rent'";
-
   connection.query(sql, (err, results) => {
     if (err) {
       console.error("Error fetching jobs:", err);
@@ -1712,7 +1472,6 @@ app.get("/propertyforrent", (req, res) => {
 });
 app.get("/propertyforsell", (req, res) => {
   const sql = "SELECT * FROM property WHERE pFor = 'sell'";
-
   connection.query(sql, (err, results) => {
     if (err) {
       console.error("Error fetching jobs:", err);
@@ -1723,7 +1482,6 @@ app.get("/propertyforsell", (req, res) => {
 });
 app.get("/propertyforexchange", (req, res) => {
   const sql = "SELECT * FROM property WHERE pFor = 'exchange'";
-
   connection.query(sql, (err, results) => {
     if (err) {
       console.error("Error fetching jobs:", err);
@@ -1734,15 +1492,12 @@ app.get("/propertyforexchange", (req, res) => {
 });
 app.get("/propertybycity", (req, res) => {
   const city = req.body.city;
-
   const sql = "SELECT * FROM property WHERE city = ?";
-
   connection.query(sql, [city], (err, results) => {
     if (err) {
       console.error("Error fetching properties:", err);
       return res.status(500).json({ error: "Error retrieving properties" });
     }
-
     res.status(200).json(results);
   });
 });
